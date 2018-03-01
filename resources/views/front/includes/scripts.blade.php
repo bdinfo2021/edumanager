@@ -8,10 +8,16 @@
 
 <!-- Modal video -->
 <script type="text/javascript" src="{{asset('/')}}front/js/modal-video.js"></script>
+
+<!-- wistia/fresh-url -->
+
+
+
 <script !src="">
     $(document).ready(function () {
-        $(".modules ul li a").tooltip({
-            position: {my: "left+32 top+5", at: "left bottom", collision: "flipfit"}
-        });
+        $(".modules ul li a").tooltip();
+        $('[data-toggle="tooltip"]').tooltip();
     });
+
 </script>
+

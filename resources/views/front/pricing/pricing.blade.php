@@ -9,6 +9,7 @@
             <h2 class="text-center font-weight-light text-white">Aamra EduManager with generous features available in affordable plans</h2>
             <div class="row">
                 <div class="col-md-12 col-12 text-center">
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Hooray!">Hover over me</a>
                     <div class="generous-features bg-white">
                         <div class="feature">
                             <div class="icon students"></div>
@@ -37,9 +38,9 @@
             <div class="mb-5">
                 <h2 class="text-center font-weight-light text-white ">Affordable Plans for Smart Institutes</h2>
             </div>
-            {{--<p class="intro text-center"></p>--}}
+            <p class="intro text-center"></p>
             <div class="price-cols m-auto">
-                {{--<h4 class="text-center"></h4>--}}
+                <h4 class="text-center"></h4>
                 <div class="items-wrapper row">
                     <div class="item price-1 col-md-4 col-12 text-center">
                         <div class="item-inner">
@@ -68,7 +69,7 @@
                                 <p class="price-figure"><span class="price-figure-inner"><span class="currency">BDT</span><span class="number">30,000*</span><br /><span class="unit">per month</span></span></p>
                             </div>
                             <div class="content">
-                                <ul class="list-unstyled feature-list">
+                                <ul class="list-unstyled feature-list feature-list-middle">
                                     <li class="disabled"><i class="fa fa-check"></i>Sign up & Configuration Fee: <br/> BDT 5,000 only</li>
                                     <li><i class="fa fa-check"></i><b>18 Core Modules</b></li>
                                     <li class="bg-light"><i class="fa fa-check"></i><b>24 Advanced Modules</b></li>
@@ -78,7 +79,7 @@
                                     <li><i class="fa fa-check"></i>Onsite Support (optional)</li>
                                     <li><i class="fa fa-check"></i>Dedicated Cloud Based Server</li>
                                     <li><i class="fa fa-check"></i>Best for School/College</li>
-                                    {{--<li class="disabled"><i class="fa fa-times"></i>24/7 support</li>--}}
+                                    <li class="disabled"><i class="fa fa-times"></i>24/7 support</li>
                                 </ul>
                                 <a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}">GET STARTED NOW</a>
                             </div><!--//content-->
@@ -95,19 +96,26 @@
                                 <p class="price-figure">
                                     <span class="price-figure-inner">
                                         <span class="currency">CALL FOR PRICE</span>
-                                        <span class="number"></span><br />
-                                        <span class="unit">Customization framework <br> with &lt;SOURCE CODE&gt;</span></span></p>
+                                        <span class="number"></span>
+                                        <br/>
+                                    </span>
+                                </p>
+                                <p class="border border-dark bg-secondary rounded mb-2">
+                                    <span class="unit">Customization framework <br/> with <b> &lt;SOURCE CODE&gt; </b></span>
+                                </p>
                             </div>
                             <div class="content">
-                                <ul class="list-unstyled feature-list">
+                                <ul class="list-unstyled feature-list feature-list-last">
                                     <li class="disabled"><i class="fa fa-check"></i>Sign up & Configuration Fee: <br/> << Call for Price >></li>
                                     <li><i class="fa fa-check"></i><b>18 Core Modules</b></li>
                                     <li><i class="fa fa-check"></i><b>24 Advanced Modules</b></li>
                                     <li class="bg-light"><i class="fa fa-check"></i><b>12 Enterprise Modules</b></li>
-                                    <li><i class="fa fa-check"></i>Priority Support</li>
-                                    <li class="bg-info"><i class="fa fa-check"></i>Online Training</li>
-                                    <li class="bg-info"><i class="fa fa-check"></i>Data Entry Services</li>
-                                    <li><i class="fa fa-check"></i>Fee Structure Integration</li>
+
+                                    <li><i class="fa fa-check"></i><a data-toggle="tooltip" data-html="true" title="<ul><li><b>• Dedicated Agent</b> to help your institution's transition smoother.</li><li><b>•</b> You can reach out to us through <b>Email, Phone, Chat</b></li></ul>">Priority Support</a></li>
+                                    <li><i class="fa fa-check"></i><a data-toggle="tooltip" data-html="true" title="<ul><li>On demand <b> Onsite Training </b> by the best of our trainers at your institution to make your employees Fedena super users.</li></ul>">Onsite Training</a></li>
+                                    <li><i class="fa fa-check"></i><a data-toggle="tooltip" data-html="true" title="<ul><li><b>•</b> Course and Batch creation</li><li><b>•</b> Creation of Student Category</li><li><b>•</b> Data Clean-up </li><li><b>•</b> Data Alignment</li><li><b>•</b> Data Upload</li></ul>">Data Entry Services</a></li>
+                                    <li><i class="fa fa-check"></i><a data-toggle="tooltip" data-html="true" title="<ul><li>Our team will analyse your institution’s Fee structure and will implement the Finance workflow tailored for your setup.</li></ul>">Fee Structure Integration</a></li>
+
                                     <li><i class="fa fa-check"></i>Dedicated Cloud Based Server</li>
                                     <li><i class="fa fa-check"></i>Onsite Dedicated Support</li>
                                     <li><i class="fa fa-check"></i>Best for School/College/University</li>
@@ -117,6 +125,11 @@
                         </div><!--//item-inner-->
                     </div><!--//item-->
                 </div><!--//items-wrapper-->
+                <div class="tooltip">
+                    <a href="#" title="That&apos;s what this widget is">Tooltips</a> can be attached to any element. When you hover
+                    the element with your mouse, the title attribute is displayed in a little box next to the element, just like a native tooltip.
+                </div>
+
                 <p class="note font-weight-light">* - Additional BDT 45,000 only per month for Onsite Support (on demand). All prices are including applicable VAT.</p>
             </div><!--//row-->
         </div><!--//container-->
@@ -315,3 +328,4 @@
         </div><!--//container-->
     </section><!--//cta-section-->
 @endsection
+

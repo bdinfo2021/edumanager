@@ -85,10 +85,10 @@
                                             <a title="Spread the news and keep all your employees and students engaged by bringing the latest happenings on campus right to their dashboards and mobile phones.">
                                                 <span class="mod-icon news"></span>News Management</a></li>
                                         <li>
-                                            <a title="Four user roles—Administrator, Employee, Student, and Parent—that determine what the user can and cannot do within Fedena. Administrators can assign and manage employee privileges based on the role played in the institution.">
+                                            <a title="Four user roles—Administrator, Employee, Student, and Parent—that determine what the user can and cannot do within EduManager. Administrators can assign and manage employee privileges based on the role played in the institution.">
                                                 <span class="mod-icon user"></span>User Management</a></li>
                                         <li>
-                                            <a title="Inform, and be informed of events happening on and off campus by glancing at your color coded Fedena calendar.">
+                                            <a title="Inform, and be informed of events happening on and off campus by glancing at your color coded EduManager calendar.">
                                                 <span class="mod-icon calendar"></span>Institute/Event Calendar</a></li>
                                         <li>
                                             <a title="Secure, comprehensive, and robust—the Finance module provides a fast and efficient way to register financial transactions, automate transactions, and generate financial reports that will help you gain financial insight on managing costs and expenditures.">
@@ -97,7 +97,7 @@
                                             <a title="A quick and easy way to search and access all your student records, both current and archived using various filters.">
                                                 <span class="mod-icon info"></span>Student Information</a></li>
                                         <li>
-                                            <a title=" Secure personalized login credentials for every student and parent; to empower all students to make the most of Fedena and achieve their educational goals, while facilitating parents to monitor and track their ward’s progress reports, results, attendance, and many more.">
+                                            <a title=" Secure personalized login credentials for every student and parent; to empower all students to make the most of EduManager and achieve their educational goals, while facilitating parents to monitor and track their ward’s progress reports, results, attendance, and many more.">
                                                 <span class="mod-icon sp-login"></span>Student/Parent Login</a></li>
                                         <li>
                                             <a title="Secure personalized login credentials for every employee, allowing them to perform their tasks efficiently depending on the privileges assigned by their roles.">
@@ -112,7 +112,7 @@
                                             <a title="Provide feedback and general comments about a student’s performance in class and in examinations.">
                                                 <span class="mod-icon remarks"></span>Custom Student Remarks </a></li>
                                         <li>
-                                            <a title="Communicate with students, parents, and employees on a more personal level by sending SMS text messages right to their mobile phones from Fedena. Customize the SMS settings to deliver alerts when specific events occur in Fedena.">
+                                            <a title="Communicate with students, parents, and employees on a more personal level by sending SMS text messages right to their mobile phones from EduManager. Customize the SMS settings to deliver alerts when specific events occur in EduManager.">
                                                 <span class="mod-icon sms"></span>SMS integration </a></li>
                                     </ul>
                                 </div>
@@ -421,7 +421,7 @@
                                             <a title="Whether it’s deciding the place for an educational tour or trying to keep a class’ attention, take a poll to engage your students and employees or to make an informed decision.">
                                                 <span class="mod-icon poll"></span>Poll</a></li>
                                         <li>
-                                            <a title="Add some color to your Fedena institution by choosing a background color from the color palette that best represents your institution.">
+                                            <a title="Add some color to your EduManager institution by choosing a background color from the color palette that best represents your institution.">
                                                 <span class="mod-icon theme"></span>Theme</a></li>
                                         <li>
                                             <a title="Record and track disciplinary incidents to ensure that students are held accountable for their actions.">
@@ -432,9 +432,9 @@
                                                 <span class="mod-icon registration"></span>Applicant Registration</a>
                                         </li>
                                         <li>
-                                            <a title="Make it quick and save yourself much time and effort performing common data entry tasks. Upload data in to Fedena in bulk using predefined CSV files.">
+                                            <a title="Make it quick and save yourself much time and effort performing common data entry tasks. Upload data in to EduManager in bulk using predefined CSV files.">
                                                 <span class="mod-icon custom-import"></span>Custom Import</a></li>
-                                        <li><a title="Conveniently backup your Fedena data for data security.">
+                                        <li><a title="Conveniently backup your EduManager data for data security.">
                                                 <span class="mod-icon data-export"></span>Data export</a></li>
                                         <li>
                                             <a title="In addition to generating specific student and employee reports, you can create custom reports using a wide range of filters.">
@@ -446,10 +446,10 @@
                                             <a title="Collect and manage instant fee payments in a few simple steps without having to schedule fee collection dates.">
                                                 <span class="mod-icon instant-fee"></span>Instant Fee</a></li>
                                         <li>
-                                            <a title="Run and access any third party application within Fedena without opening the application in a separate tab.">
+                                            <a title="Run and access any third party application within EduManager without opening the application in a separate tab.">
                                                 <span class="mod-icon app-frame"> </span>App frame</a></li>
                                         <li>
-                                            <a title="Integrate with third-party applications and extend the functionality of Fedena, and also efficiently manage your Fedena data.">
+                                            <a title="Integrate with third-party applications and extend the functionality of EduManager, and also efficiently manage your EduManager data.">
                                                 <span class="mod-icon api-access"></span>API access</a></li>
                                         <li>
                                             <a title="Make secure online fee payments using Paypal, Authorize.net and Interswitch">
@@ -460,7 +460,7 @@
                                                 <span class="mod-icon email-integration"></span>Email integration</a>
                                         </li>
                                         <li>
-                                            <a title="Easily transfer all the finance transactions from Fedena to Tally, and continue using Tally to manage your financial transactions.">
+                                            <a title="Easily transfer all the finance transactions from EduManager to Tally, and continue using Tally to manage your financial transactions.">
                                                 <span class="mod-icon tally"></span>Accounting System/ Integration</a>
                                         </li>
 
@@ -807,10 +807,10 @@
                                     <ul>
 
                                         <li>
-                                            <a title="Secure and seamless access to your Fedena account using Google credentials.">
+                                            <a title="Secure and seamless access to your EduManager account using Google credentials.">
                                                 <span class="mod-icon google-sso"></span>Google SSO</a></li>
                                         <li>
-                                            <a title="Access documents uploaded to Google Docs in Fedena and vice versa.">
+                                            <a title="Access documents uploaded to Google Docs in EduManager and vice versa.">
                                                 <span class="mod-icon google-doc"></span>Google Doc</a></li>
 
 
@@ -825,10 +825,10 @@
                                         <li>
                                             <a title="Organize events to help connect your students and employees with alumni and build strong relationships.">
                                                 <span class="mod-icon alumni"></span>Alumni</a></li>
-                                        <li><a title="Monitor and track user activities in Fedena in real-time.">
+                                        <li><a title="Monitor and track user activities in EduManager in real-time.">
                                                 <span class="mod-icon audit"></span>Audit</a></li>
                                         <li>
-                                            <a title="A safe location for all your files that is to be shared with other Fedena users.">
+                                            <a title="A safe location for all your files that is to be shared with other EduManager users.">
                                                 <span class="mod-icon doc-manager"></span>Doc manager</a></li>
                                         <li>
                                             <a title=" Empower students, teachers, and other employees to create and publish blog posts on any topic and help share their story with everyone. It includes features typically found in blogs such as searching for old entries, commenting, comment moderation, and many more.">
@@ -840,7 +840,7 @@
                                             <a title="Users can receive reminders of various events on their mobile numbers and email ids.">
                                                 <span class="mod-icon reminder"></span>Reminder</a></li>
                                         <li>
-                                            <a title="Remove the manual effort from timetable generation by letting Fedena create timetables for batches. Assign various rules like preferred subject timings and consecutive classes for subjects to get the optimal timetable.">
+                                            <a title="Remove the manual effort from timetable generation by letting EduManager create timetables for batches. Assign various rules like preferred subject timings and consecutive classes for subjects to get the optimal timetable.">
                                                 <span class="mod-icon atg"></span>Automatic Timetable Generator</a></li>
                                         <li>
                                             <a title=""

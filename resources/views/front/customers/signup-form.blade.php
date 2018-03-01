@@ -80,7 +80,7 @@
                                     <label class="col-md-3 col-form-label" for="signup-email">Message</label>
                                     <div class="col-md-9">
                                     <textarea class="form-control" name="message" id="name_of_institution"
-                                              rows="3" placeholder="If you have any specific queries about Fedena">
+                                              rows="3" placeholder="If you have any specific queries about EduManager">
 
                                     </textarea></div>
                                 </div><!--//form-group-->

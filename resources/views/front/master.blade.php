@@ -7,9 +7,9 @@
 
         @yield('body')
 
-        @extends('front.includes.footer')
-        @extends('front.includes.modal')
-        @extends('front.includes.scripts')
+        @include('front.includes.footer')
+        @include('front.includes.modal')
+        @include('front.includes.scripts')
     </body>
 
 </html>

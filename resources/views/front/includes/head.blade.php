@@ -11,6 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="{{asset('/')}}front/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('/')}}front/css/jquery-ui.css">
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('/')}}front/plugins/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="{{asset('/')}}front/plugins/flexslider/flexslider.css">

@@ -1,0 +1,40 @@
+<!-- Javascript -->
+<script type="text/javascript" src="{{asset('/')}}front/plugins/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{{asset('/')}}front/plugins/popper.min.js"></script>
+<script type="text/javascript" src="{{asset('/')}}front/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{asset('/')}}front/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="{{asset('/')}}front/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="{{asset('/')}}front/js/main.js"></script>
+
+<!-- Modal video -->
+<script type="text/javascript" src="{{asset('/')}}front/js/modal-video.js"></script>
+
+<!-- wistia/fresh-url -->
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-535854-7']);
+    _gaq.push(['_setDomainName', 'wistia.com']);
+    _gaq.push(['_trackPageview']);
+
+    // If the client supports replaceState, strip utm tags out of the query string after GA loads.
+    _gaq.push(function(){
+        if (!window.history.replaceState) { return; }
+        var cleanSearch = window.location.search.replace(/8000[^&]+&?/g, '').replace(/&$/, '').replace(/^\?$/, '');
+        window.history.replaceState({}, '', window.location.pathname + 'index.html');
+    });
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script !src="">
+    $(document).ready(function () {
+        $(".modules ul li a").tooltip({
+            position: {my: "left+32 top+5", at: "left bottom", collision: "flipfit"}
+        });
+    });
+</script>
