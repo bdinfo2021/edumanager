@@ -37,8 +37,8 @@
                 <div class="footer-col connect col-12 col-lg-6">
                     <div class="footer-col-inner">
                         <ul class="social list-inline">
-                            <li class="list-inline-item"><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.facebook.com/aamra.edumanager" target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                             <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
                             <li class="list-inline-item row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
