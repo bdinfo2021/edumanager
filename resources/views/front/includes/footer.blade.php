@@ -7,7 +7,7 @@
                     <div class="footer-col-inner">
                         <h3 class="title">About us</h3>
                         <ul class="list-unstyled">
-                            <li><a href="https://www.aamra.com.bd"><i class="fa fa-caret-right"></i>Who we are</a></li>
+                            <li><a href="https://www.aamra.com.bd" target="_blank"><i class="fa fa-caret-right"></i>Who we are</a></li>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Contact us</a></li>
                         </ul>
                     </div><!--//footer-col-inner-->
