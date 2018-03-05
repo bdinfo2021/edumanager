@@ -65,7 +65,7 @@
                         <h3 class="title">Mobile apps</h3>
                         <ul class="list-unstyled download-list">
                             <li><a class="btn btn-ghost" href="#"><i class="fa fa-apple"></i><span class="text">Download for iOS</span> </a></li>
-                            <li><a class="btn btn-ghost" href="#"><i class="fa fa-android"></i><span class="text">Download for Android</span></a></li>
+                            <li><a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.aamrainfotainment.bitschool"><i class="fa fa-android"></i><span class="text">Download for Android</span></a></li>
                             {{--<li><a class="btn btn-ghost" href="#"><i class="fa fa-windows"></i><span class="text">Windows coming soon...</span></a></li>--}}
                         </ul>
                     </div><!--//footer-col-inner-->
