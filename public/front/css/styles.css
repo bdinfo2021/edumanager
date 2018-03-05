@@ -1486,6 +1486,11 @@ select {
     background-clip: padding-box;
 }
 
+#enterprise-heading{
+    height: 230px;
+
+}
+
 .pricing .item .heading .title {
     margin-bottom: 30px;
     padding-bottom: 30px;
@@ -1511,6 +1516,8 @@ select {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     margin: 0 auto;
+    position: relative;
+    top:-12px;
 }
 
 .pricing .item .price-figure .number {
@@ -1530,6 +1537,15 @@ select {
     font-family: arial, sans-serif;
     color: #666;
     font-size: 18px;
+}
+.pricing .item .price-figure .currency-star{
+    top: -19px;
+    right: 0px;
+    position: relative;
+    font-family: arial, sans-serif;
+    color: #666;
+    font-size: 21px;
+
 }
 
 .pricing .item .ribbon {
@@ -1552,7 +1568,8 @@ select {
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-    background-color: #5d80a1;
+    /*background-color: #5d80a1;*/
+    background-color: #e04141;
     -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
     -moz-transform: rotate(45deg) translate3d(0, 0, 0);
     -ms-transform: rotate(45deg) translate3d(0, 0, 0);
@@ -1579,15 +1596,7 @@ select {
 
 .pricing .item .feature-list {
     margin-bottom: 30px;
-    height:600px;
-}
-
-.pricing .item .feature-list-middle {
-    height:585px;
-}
-
-.pricing .item .feature-list-last {
-    height:566px;
+    height:530px;
 }
 
 .pricing .item .feature-list li {
@@ -4379,7 +4388,7 @@ select {
 .modules ul li a:hover      {color:#e84c3d}
 
 /*Basic modules*************/
-.mod-icon                   {width: 25px; height: 25px; display: block; float: left; margin-right: 10px; background:   url(../images/features/EduManager-modules-icons-sprite.jpg);  }
+.mod-icon                   {width: 25px; height: 25px; display: block; float: left; margin-right: 10px; background:   url(../images/features/edumanager-modules-icons-sprite.jpg);  }
 .mod-icon.course-batch      {background-position: 0 0}
 .mod-icon.hr                {background-position: 0 -25px}
 .mod-icon.attendance        {background-position: 0 -50px}

@@ -9,8 +9,9 @@
 <!-- Modal video -->
 <script type="text/javascript" src="{{asset('/')}}front/js/modal-video.js"></script>
 
-<!-- wistia/fresh-url -->
+<!-- lightbox2-master -->
 
+<script type="text/javascript" src="{{asset('/')}}front/plugins/lightbox2-master/js/lightbox.min.js"></script>
 
 
 <script !src="">

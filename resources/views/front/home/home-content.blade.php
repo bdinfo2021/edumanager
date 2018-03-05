@@ -50,8 +50,8 @@
                         <!--</div>&lt;!&ndash;//quote&ndash;&gt;                        -->
                     </div><!--//content-->
                     <figure class="figure offset-lg-1 col-12 col-lg-6">
-                        <img class="img-fluid" src="{{asset('/')}}front/images/figures/dashboard.png" alt="" />
-                        <figcaption class="figure-caption">(Screenshot: Dashboard) </figcaption>
+                        <a href="{{asset('/')}}front/images/figures/dashboard.png" data-lightbox="dashboard"><img class="img-fluid" src="{{asset('/')}}front/images/figures/dashboard.png" alt="" /></a>
+                        {{--<figcaption class="figure-caption">(Screenshot: Dashboard) </figcaption>--}}
                     </figure>
                 </div><!--//item-->
                 <div class="row item">
@@ -63,9 +63,9 @@
                             </p>
                         </div>
                     </div><!--//content-->
-                    <figure class="figure offset-lg-1 col-12 col-lg-7 order-lg-1">
-                        <img class="img-fluid" src="{{asset('/')}}front/images/figures/software.png" alt="" />
-                        <figcaption class="figure-caption">(Screenshot: Software) </figcaption>
+                    <figure class="figure col-12 col-lg-7 order-lg-1">
+                        <a href="{{asset('/')}}front/images/figures/software.png" data-lightbox="software"><img class="img-fluid" src="{{asset('/')}}front/images/figures/software.png" alt="" /></a>
+                        {{--<figcaption class="figure-caption">(Screenshot: Software) </figcaption>--}}
                     </figure>
                 </div><!--//item-->
                 <div class="row item">
@@ -78,8 +78,8 @@
                         </div>
                     </div><!--//content-->
                     <figure class="figure offset-lg-1 col-12 col-lg-7">
-                        <img class="img-fluid" src="{{asset('/')}}front/images/figures/message.png" alt="" />
-                        <figcaption class="figure-caption">(Screenshot: Message) </figcaption>
+                        <a href="{{asset('/')}}front/images/figures/message.png" data-lightbox="message"><img class="img-fluid" src="{{asset('/')}}front/images/figures/message.png" alt="" /></a>
+                        {{--<figcaption class="figure-caption">(Screenshot: Message) </figcaption>--}}
                     </figure>
                 </div><!--//item-->
 
@@ -93,7 +93,7 @@
                         </div>
                     </div><!--//content-->
                     <figure class="figure col-12 col-lg-4 order-lg-1">
-                        <img class="img-fluid" src="{{asset('/')}}front/images/figures/devices.png" alt="" />
+                        <a href="{{asset('/')}}front/images/figures/devices.png" data-lightbox="devices"><img class="img-fluid" src="{{asset('/')}}front/images/figures/devices.png" alt="" /></a>
                         <!--<div class="control text-center">-->
                         <!--<button type="button" class="play-trigger" data-toggle="modal" data-target="#modal-video"><i class="fa fa-play"></i></button>                    -->
                         <!--</div>&lt;!&ndash;//control&ndash;&gt;-->
@@ -125,7 +125,7 @@
                 <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
 
                 <div class="row item last-item">
-                    <div class="content col-12 col-lg-4 order-lg-12">
+                    <div class="content col-12 col-lg-4">
                         <h3 class="title">Manage your institute from online platform</h3>
                         <div class="desc">
                             <p>Best suited for management of your education Institutions e.g. School, College & University to control single or multiple school or college from online platform. For starting to use the Aamra EduManager Software System, all you need to signup & register your institute name from website and pay Signup Fee and Monthly Subscription Fee. No need to installation, configuration, server & network connection to use aamra EduManager; completely zero-configuration to start.</p>
@@ -141,15 +141,16 @@
                         <!--</div>&lt;!&ndash;//quote-content&ndash;&gt;-->
                         <!--</div>&lt;!&ndash;//quote&ndash;&gt;-->
                     </div><!--//content-->
-                    <figure class="figure col-12 col-lg-7 order-lg-1">
-                        <img class="img-fluid" src="{{asset('/')}}front/images/figures/multischool.png" alt="" />
+                    <figure class="figure offset-lg-1 col-12 col-lg-7">
+                        {{--<a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>--}}
+                        <a href="{{asset('/')}}front/images/figures/multischool.png" data-lightbox="Multi School"><img class="img-fluid" src="{{asset('/')}}front/images/figures/multischool.png" alt="" /></a>
                     </figure>
                 </div><!--//item-->
 
 
                 <div class="feature-lead text-center">
                     <h4 class="title">To find out more, take a tour below, try the free demo or contact us.</h4>
-                    <p><a class="btn btn-cta btn-cta-secondary" href="features.html">Take a Tour</a></p>
+                    <p><a class="btn btn-cta btn-cta-secondary" href="{{route('/features')}}">Take a Tour</a></p>
                 </div>
             </div><!--//container-->
         </section><!--//why-->
@@ -213,7 +214,7 @@
                 </ul><!--//press-list-->
                 <div class="press-lead text-center">
                     <h3 class="title">Have press inquires?</h3>
-                    <p class="press-links"><a href="#"><a href="contact.html">Get in touch</a></p>
+                    <p class="press-links"><a href="#"><a href="{{route('/contact')}}">Get in touch</a></p>
                 </div>
 
             </div><!--//container-->
