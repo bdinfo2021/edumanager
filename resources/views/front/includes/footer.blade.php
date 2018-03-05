@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="footer-content">
         <div class="container">
-            <div class="row">
+            <div class="row" style="display: none">
                 <div class="footer-col links col-lg-2 col-md-4 col-12">
                     <div class="footer-col-inner">
                         <h3 class="title">About us</h3>
