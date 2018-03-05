@@ -7,10 +7,7 @@
                     <div class="footer-col-inner">
                         <h3 class="title">About us</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Who we are</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Press</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Blog</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Jobs</a></li>
+                            <li><a href="https://www.aamra.com.bd"><i class="fa fa-caret-right"></i>Who we are</a></li>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Contact us</a></li>
                         </ul>
                     </div><!--//footer-col-inner-->
