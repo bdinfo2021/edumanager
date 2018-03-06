@@ -9,32 +9,43 @@
         <div class="story-container container text-center">
             <div class="story-container-inner">
                 <div class="about">
-                    <p style="text-align: justify;"><b>aamra infotainment limited</b> is a one-stop web &amp; digital
-                        marketing solutions company. From web designing to content management, event management to
-                        hosting portals, online product promotion campaigns through digital marketing to maintaining
-                        intranets; AIL has its wings spread wide across the digital world. </p>
-                    <p style="text-align: justify;">This reliance has been achieved since individual client’s needs and
-                        requirements are reviewed thoroughly. AIL also provides content services for its corporate
-                        clients and through its popular portal bangladeshinfo.com, it portrays and presents a positive
-                        Bangladesh to the world audience. </p>
-                    <p style="text-align: justify;">Over the span of time, the company has delivered innovative and
-                        unique web ideas with which it has secured a commendable registration among the minds of web
-                        viewers. </p>
-                    <p style="text-align: justify;">The longest running local web portal, www.bangladeshinfo.com is an
-                        aamra infotainment initiative that also happens to be one of the most visited Bangladeshi
-                        sites. </p>
-                    <p style="text-align: justify;">We make sure that our clients run their day-to-day businesses in an
-                        easier way by maintaining their intranet and websites. AIL, having its own ISP facilities,
-                        designs and develops innovative and latest technology based web sites that merge information,
-                        interactivity and aesthetic designs into a perfect blend. Our team also develops and maintains
-                        web contents of a wide variety of websites. The portal provides the following channels: News,
-                        Business, Sports, Cricket, IT, Fashion, Music, Entertainment and Food. AIL also focuses on web
-                        solutions, advertising and a free web-based email service which includes a unique system that
-                        allows users to send emails in Bangla. </p>
-                    <blockquote class="belief">Finally, looking at aamra infotainment with a bird's eye view, it's
-                        guaranteed that you'll discover a soothing mirror where you'll look at your own image in the
-                        form of success, loyalty and reliance.
-                    </blockquote>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{asset('/')}}front/images/about-us/aamra.jpg" alt="LOGO" width="150" height="75"/>
+                        </div>
+                        <div class="col-md-9">
+                            <p style="text-align: justify;"><b>aamra infotainment limited</b> is a one-stop web &amp; digital
+                                marketing solutions company. From web designing to content management, event management to
+                                hosting portals, online product promotion campaigns through digital marketing to maintaining
+                                intranets; AIL has its wings spread wide across the digital world. </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="text-align: justify;">This reliance has been achieved since individual client’s needs and
+                                requirements are reviewed thoroughly. AIL also provides content services for its corporate
+                                clients and through its popular portal bangladeshinfo.com, it portrays and presents a positive
+                                Bangladesh to the world audience. </p>
+                            <p style="text-align: justify;">Over the span of time, the company has delivered innovative and
+                                unique web ideas with which it has secured a commendable registration among the minds of web
+                                viewers. </p>
+                            <p style="text-align: justify;">The longest running local web portal, www.bangladeshinfo.com is an
+                                aamra infotainment initiative that also happens to be one of the most visited Bangladeshi
+                                sites. </p>
+                            <p style="text-align: justify;">We make sure that our clients run their day-to-day businesses in an
+                                easier way by maintaining their intranet and websites. AIL, having its own ISP facilities,
+                                designs and develops innovative and latest technology based web sites that merge information,
+                                interactivity and aesthetic designs into a perfect blend. Our team also develops and maintains
+                                web contents of a wide variety of websites. The portal provides the following channels: News,
+                                Business, Sports, Cricket, IT, Fashion, Music, Entertainment and Food. AIL also focuses on web
+                                solutions, advertising and a free web-based email service which includes a unique system that
+                                allows users to send emails in Bangla. </p>
+                            <blockquote class="belief">Finally, looking at aamra infotainment with a bird's eye view, it's
+                                guaranteed that you'll discover a soothing mirror where you'll look at your own image in the
+                                form of success, loyalty and reliance.
+                            </blockquote>
+                        </div>
+                    </div>
                 </div><!--//about-->
                 <!--<div class="team">-->
                 <!--<h3 class="title">Meet the team</h3>-->
