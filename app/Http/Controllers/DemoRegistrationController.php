@@ -12,6 +12,11 @@ class DemoRegistrationController extends Controller
 
     }
     public function addCustomer(Request $request){
+        $request->validate([
+            'first_name' => 'required|max:255',
+            'last_name' => 'required',
+        ]);
+        return $request;
         $customer = new Customer();
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
