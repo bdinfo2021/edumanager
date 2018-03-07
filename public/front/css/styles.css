@@ -4468,3 +4468,21 @@ select {
     margin: 0;
     list-style: none;
 }
+
+/*Required Modules***********/
+
+.form-group.required .col-form-label:after {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-size: 8px;
+    content: "\f069";
+    color: #d00;
+    /*content: "*";*/
+    position: absolute;
+    margin-left: 3px;
+    top:5px;
+}
+
+.form-group .error {
+    color: #ec6952;
+}

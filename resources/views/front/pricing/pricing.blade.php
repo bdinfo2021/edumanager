@@ -282,4 +282,11 @@
         </div><!--//container-->
     </section><!--//cta-section-->
 @endsection
+@section('scripts')
+    <script !src="">
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+@endsection
 

@@ -3,7 +3,7 @@
     <div class="container">
         {{--<h1 class="logo">--}}
             <a href="{{route('/home')}}">
-                <img src="{{asset('/')}}front/images/logo.png" alt="LOGO" width="150" height="75"/>
+                <img src="{{asset('/')}}front/images/logo.png" alt="LOGO" width="160" height="78"/>
                 {{--<span class="text">Aamra</span>--}}
             </a>
         {{--</h1><!--//logo-->--}}

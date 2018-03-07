@@ -47,3 +47,7 @@ Route::post('/customer/add',[
     'uses'=>'DemoRegistrationController@addCustomer',
     'as'=>'/add-new-customer'
 ]);
+Route::get('/customer/confirmation-message',[
+    'uses'=>'DemoRegistrationController@message',
+    'as'=>'/confirmation-message'
+]);

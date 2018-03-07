@@ -10,6 +10,8 @@
         @include('front.includes.footer')
         @include('front.includes.modal')
         @include('front.includes.scripts')
+
+        @yield('scripts')
     </body>
 
 </html>

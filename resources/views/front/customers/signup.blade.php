@@ -18,12 +18,14 @@
     </header><!--//header-->
 
     <!-- ******Signup Section****** -->
-    @include('front.customers.signup-form')
+    @yield('body')
+{{--    @include('front.customers.signup-form')--}}
             <!--//signup-section-->
 </div><!--//upper-wrapper-->
 
-@extends('front.includes.footer')
-@extends('front.includes.scripts')
+@include('front.includes.footer')
+@include('front.includes.scripts')
+@yield('scripts')
 </body>
 
 </html>

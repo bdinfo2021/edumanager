@@ -95,3 +95,10 @@
 
     </div><!--//wrapper-->
 @endsection
+@section('scripts')
+    <!-- contact page specific js starts -->
+    <script type="text/javascript" src="{{asset('/')}}front/plugins/jquery.validate.min.js"></script>
+    {{--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>--}}
+    <script type="text/javascript" src="{{asset('/')}}front/js/contact.js"></script>
+    <!-- contact page specific js ends-->
+@endsection

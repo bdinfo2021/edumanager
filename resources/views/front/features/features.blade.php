@@ -965,3 +965,10 @@
         </div><!--//container-->
     </section><!--//steps-->
 @endsection
+@section('scripts')
+    <script !src="">
+        $(document).ready(function () {
+            $(".modules ul li a").tooltip();
+        });
+    </script>
+@endsection
