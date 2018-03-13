@@ -20,11 +20,12 @@ class CreateCustomersTable extends Migration
             $table->string('email_address');
             $table->string('mobile_number');
             $table->string('address');
-            $table->string('name_of_institution')->nullable();;
-            $table->string('institution_type')->nullable();;
-            $table->string('role_in_institution')->nullable();;
-            $table->string('website_link')->nullable();;
-            $table->text('message')->nullable();;
+            $table->string('name_of_institution')->nullable();
+            $table->string('institution_type')->nullable();
+            $table->string('role_in_institution')->nullable();
+            $table->string('website_link')->nullable();
+            $table->text('message')->nullable();
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
         });
     }

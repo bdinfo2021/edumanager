@@ -1,5 +1,6 @@
-@extends('front.customers.signup')
+@extends('front.customers.master')
 @section('body')
+    <!-- ******Signup Section****** -->
     <section class="signup-section access-section section">
         <div class="container">
             <div class="row">
@@ -32,8 +33,23 @@
                                 <div class="form-group row required">
                                     <label class="col-md-3 col-form-label" for="signup-email">Your email</label>
                                     <div class="col-md-9">
-                                        {{Form::email('email_address','',array('required' => 'required', 'placeholder' => 'Your Email Address', 'class' => 'form-control '.$errors->first('email_address','is-invalid')))}}
+                                        {{Form::email('email_address','',array('required' => 'required', 'placeholder' => 'Your Email Address', 'id' => 'emailAddress', 'class' => 'form-control '.$errors->first('email_address','is-invalid')))}}
                                         <div class="invalid-feedback">{{$errors->has('email_address') ? $errors->first('email_address') : ''}}</div>
+                                        <div id="res"></div>
+                                    </div>
+                                </div><!--//form-group-->
+                                <div class="form-group row required">
+                                    <label class="col-md-3 col-form-label" for="signup-email">Password</label>
+                                    <div class="col-md-9">
+                                        {{Form::text('password','',array('required' => 'required', 'placeholder' => 'Your Password', 'class' => 'form-control '.$errors->first('password','is-invalid')))}}
+                                        <div class="invalid-feedback">{{$errors->has('password') ? $errors->first('password') : ''}}</div>
+                                    </div>
+                                </div><!--//form-group-->
+                                <div class="form-group row required">
+                                    <label class="col-md-3 col-form-label" for="signup-email">Retype Password</label>
+                                    <div class="col-md-9">
+                                        {{Form::text('password','',array('required' => 'required', 'placeholder' => 'Retype Same Password', 'class' => 'form-control '.$errors->first('password','is-invalid')))}}
+                                        <div class="invalid-feedback">{{$errors->has('password') ? $errors->first('password') : ''}}</div>
                                     </div>
                                 </div><!--//form-group-->
                                 <div class="form-group row required">
@@ -96,7 +112,7 @@
                                 </div>
                                 <p class="note">By signing up, you agree to our terms of services and privacy
                                     policy.</p>
-                                {{--<p class="lead">Already have an account? <a class="login-link" id="login-link" href="login.html">Log in</a></p>--}}
+                                <p class="lead">Already have an account? <a class="login-link" id="login-link" href="{{route('/customer-sign-in')}}">Log in</a></p>
                                 {{Form::close()}}
                                 {{--<form action="{{route('/add-new-customer')}}" class="signup-form" method="post">--}}
                                 {{--{{csrf_field()}}--}}
@@ -118,16 +134,29 @@
                 </div><!--//form-box-->
             </div><!--//row-->
         </div><!--//container-->
-    </section>
+    </section><!--//signup-section-->
 @endsection
 @section('scripts')
         <!-- contact page specific js starts -->
 <script type="text/javascript" src="{{asset('/')}}front/plugins/jquery.validate.min.js"></script>
 <script type="text/javascript" src="{{asset('/')}}front/js/sign-up.js"></script>
 <!-- contact page specific js ends-->
-    {{--<script !src="">--}}
-        {{--@if(Session::get('message'))--}}
-                {{--$('#myModal').modal()--}}
-        {{--@endif--}}
-    {{--</script>--}}
+    <script !src="">
+        var emailAddress = document.getElementById('emailAddress');
+        emailAddress.onblur = function () {
+            var xmlHttp = new XMLHttpRequest();
+            var emailAddress = document.getElementById('emailAddress').value;
+            var serverPage = '{{URL::to('/')}}/customer-email-check/'+emailAddress;
+            xmlHttp.open('GET',serverPage);
+            xmlHttp.onreadystatechange = function (){
+//                alert(xmlHttp.status);
+                if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    document.getElementById('res').innerHTML = xmlHttp.responseText;
+//                    document.getElementById('regBtn').disabled = false;
+                    // alert(xmlHttp.responseText);
+                };
+            };
+            xmlHttp.send(null);
+        };
+    </script>
 @endsection

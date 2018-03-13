@@ -7,20 +7,18 @@
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container">
-            {{--<h1 class="logo">--}}
+            <h1 class="logo">
                 <a href="{{route('/home')}}">
-                    <img src="{{asset('/')}}front/images/edu-manager.jpg" alt="LOGO" width="150" height="75"/>
+                    <img src="{{asset('/')}}front/images/logo.png" alt="LOGO" width="160" height="78"/>
                 </a>
                 {{--<a href="{{route('/home')}}"><span class="logo-icon"></span><span class="text">Aamra</span></a>--}}
-            {{--</h1><!--//logo-->--}}
+            </h1><!--//logo-->
 
         </div><!--//container-->
     </header><!--//header-->
 
-    <!-- ******Signup Section****** -->
     @yield('body')
-{{--    @include('front.customers.signup-form')--}}
-            <!--//signup-section-->
+    {{--    @include('front.customers.signup-form')--}}
 </div><!--//upper-wrapper-->
 
 @include('front.includes.footer')

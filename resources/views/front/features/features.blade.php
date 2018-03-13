@@ -22,7 +22,7 @@
                     based SMS notification on student attendance, built-in accounting system or integration of existing
                     accounting system<br/> e.g. Tally, Quickbook or any.</p>
                 <p class="lead">
-                    <a class="btn btn-cta btn-cta-primary btn-lg" href="{{route('/sign-up')}}" role="button">LIVE
+                    <a class="btn btn-cta btn-cta-primary btn-lg" href="{{route('/customer-sign-up')}}" role="button">LIVE
                         DEMO</a>
                 </p>
             </div>
@@ -958,7 +958,7 @@
                 </div><!--//step-->
             </div><!--//row-->
 
-            <div class="text-center"><a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}">Get Started -
+            <div class="text-center"><a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">Get Started -
                     It's Free</a>
             </div>
 

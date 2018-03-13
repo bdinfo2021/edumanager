@@ -14,7 +14,7 @@
         <div class="container text-center">
             <h2 class="title">All­-in­-one College and School Management Software</h2>
             <p class="intro">Automate everything, Generate insightful reports, Make better & faster decisions</p>
-            <p><a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}">Try Free Demo</a></p>
+            <p><a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">Try Free Demo</a></p>
             <!--<button type="button" class="play-trigger btn-link " data-toggle="modal" data-target="#modal-video" ><i class="fa fa-youtube-play"></i> Watch the video</button>-->
         </div><!--//container-->
     </section><!--//promo-->
@@ -29,7 +29,7 @@
                     Aamra EduManager is a complete education institution management ERP System provides user-friendly dashboards with login access for teachers, non-teaching staff, students, parents and management personnel of your institution. The various modules available in Aamra EduManager facilitate all the processes of your institution, from admission of new students to generating transfer certificates when students complete their studies. You can Instantly use it as Monthly Subscription based service by sign-up from below:
                     <br/>
 
-                    <a class="btn btn-default " href="{{route('/sign-up')}}"><img src="{{asset('/')}}front/images/sign-up/sign_up_now.png" alt="" width="140" height="50"></a>
+                    <a class="btn btn-default p-0" href="{{route('/customer-sign-up')}}"><img src="{{asset('/')}}front/images/sign-up/sign_up_now.png" alt="" width="140" height="50"></a>
                 </p>
                 <div class="row item">
                     <div class="content col-12 col-lg-5">
@@ -225,7 +225,7 @@
             <div class="container">
                 <h2 class="title">Ready to promote your school online?</h2>
                 <p class="intro">More than <span class="counting">3,500</span> users are using Aamra EduManager</p>
-                <p><a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}" target="_blank">Get EduManager Now</a></p>
+                <p><a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}" target="_blank">Get EduManager Now</a></p>
             </div><!--//container-->
         </section><!--//cta-section-->
 

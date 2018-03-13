@@ -93,7 +93,6 @@
         </div><!--//container-->
     </section><!--//cta-section-->
 
-    </div><!--//wrapper-->
 @endsection
 @section('scripts')
     <!-- contact page specific js starts -->

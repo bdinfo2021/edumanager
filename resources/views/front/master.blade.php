@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include('front.includes.head')
+@include('front.includes.head')
 
-    <body class="home-page">
-        @include('front.includes.header')
+<body class="home-page">
+<div class="wrapper">
+    @include('front.includes.header')
 
-        @yield('body')
+    @yield('body')
+</div><!--//wrapper-->
 
-        @include('front.includes.footer')
-        @include('front.includes.modal')
-        @include('front.includes.scripts')
+@include('front.includes.footer')
+@include('front.includes.modal')
+@include('front.includes.scripts')
 
-        @yield('scripts')
-    </body>
+@yield('scripts')
+</body>
 
 </html>
 

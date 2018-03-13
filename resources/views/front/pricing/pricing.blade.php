@@ -56,7 +56,7 @@
                                     <li><i class="fa fa-check"></i>Webinar Based Training</li>
                                     <li><i class="fa fa-check"></i>Best for School</li>
                                 </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}">GET STARTED NOW</a>
+                                <a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">GET STARTED NOW</a>
                             </div><!--//content-->
                         </div><!--//item-inner-->
                     </div><!--//item-->
@@ -80,7 +80,7 @@
                                     <li><i class="fa fa-check"></i>Best for School/College</li>
                                     {{--<li class="disabled"><i class="fa fa-times"></i>24/7 support</li>--}}
                                 </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}">GET STARTED NOW</a>
+                                <a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">GET STARTED NOW</a>
                             </div><!--//content-->
                             <div class="ribbon">
                                 <div class="text">Popular</div>
@@ -130,7 +130,7 @@
                                     <li><i class="fa fa-check"></i>Onsite Dedicated Support</li>
                                     <li><i class="fa fa-check"></i>Best for School/College/University</li>
                                 </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}">GET STARTED NOW</a>
+                                <a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">GET STARTED NOW</a>
                             </div><!--//content-->
                         </div><!--//item-inner-->
                     </div><!--//item-->
@@ -278,7 +278,7 @@
         <div class="container">
             <h2 class="title">More than <span class="counting">3,500</span> users are using Aamra EduManager</h2>
             <p class="intro">What are you waiting for?</p>
-            <p><a class="btn btn-cta btn-cta-primary" href="{{route('/sign-up')}}" target="_blank">Get EduManager Now</a></p>
+            <p><a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}" target="_blank">Get EduManager Now</a></p>
         </div><!--//container-->
     </section><!--//cta-section-->
 @endsection

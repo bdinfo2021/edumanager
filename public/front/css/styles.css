@@ -253,12 +253,13 @@ select {
 
 .header h1.logo a {
     color: #fff;
-    padding: 15px 30px;
+    /*padding: 15px 30px;*/
     display: inline-block;
     text-align: center;
     line-height: 1.4;
     max-width: 155px;
-    background: #ec6952;
+    /*background: #ec6952;*/
+    background: transparent;
     -webkit-border-top-right-radius: 0;
     -webkit-border-bottom-right-radius: 4px;
     -webkit-border-bottom-left-radius: 4px;
@@ -573,7 +574,7 @@ select {
 }
 
 .promo .title {
-    font-size: 46px;
+    font-size: 42px;
     margin-bottom: 20px;
     margin-top: 0;
     font-weight: 700;
@@ -581,7 +582,7 @@ select {
 }
 
 .promo.section .intro {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     margin-bottom: 30px;
 }
@@ -1027,6 +1028,23 @@ select {
 }
 
 /* ======= Features tabs ======= */
+
+.customers-section {
+    padding-top: 170px;
+    position: relative;
+    z-index: 10;
+}
+
+.customers-section .title {
+    font-size: 36px;
+    margin-bottom: 60px;
+    margin-top: 0;
+    color: black;
+    font-weight: 300;
+}
+
+/* ======= customers-list ======== */
+
 
 /* = Sanaullah = */
 

@@ -1,4 +1,4 @@
-@extends('front.customers.signup')
+@extends('front.customers.master')
 @section('body')
     <div class="jumbotron text-center mb-0 pb-1" style="box-sizing: border-box;">
         <img src="{{asset('/')}}front/images/sign-up/thankyou.gif">
