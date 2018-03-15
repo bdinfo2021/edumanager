@@ -41,15 +41,15 @@
                                 <div class="form-group row required">
                                     <label class="col-md-3 col-form-label" for="signup-email">Password</label>
                                     <div class="col-md-9">
-                                        {{Form::text('password','',array('required' => 'required', 'placeholder' => 'Your Password', 'class' => 'form-control '.$errors->first('password','is-invalid')))}}
+                                        {{Form::password('password',array('required' => 'required', 'placeholder' => 'Your Password', 'class' => 'form-control '.$errors->first('password','is-invalid')))}}
                                         <div class="invalid-feedback">{{$errors->has('password') ? $errors->first('password') : ''}}</div>
                                     </div>
                                 </div><!--//form-group-->
                                 <div class="form-group row required">
-                                    <label class="col-md-3 col-form-label" for="signup-email">Retype Password</label>
+                                    <label class="col-md-3 col-form-label" for="signup-email">Confirm Password</label>
                                     <div class="col-md-9">
-                                        {{Form::text('password','',array('required' => 'required', 'placeholder' => 'Retype Same Password', 'class' => 'form-control '.$errors->first('password','is-invalid')))}}
-                                        <div class="invalid-feedback">{{$errors->has('password') ? $errors->first('password') : ''}}</div>
+                                        {{Form::password('password_confirmation',array('required' => 'required', 'placeholder' => 'Retype Same Password', 'class' => 'form-control '.$errors->first('password_confirmation','is-invalid')))}}
+                                        <div class="invalid-feedback">{{$errors->has('password_confirmation') ? $errors->first('password_confirmation') : ''}}</div>
                                     </div>
                                 </div><!--//form-group-->
                                 <div class="form-group row required">
