@@ -64,7 +64,7 @@ class CustomerController extends Controller
         Session::put('CustomerId',$customer->id);
         Session::put('CustomerName',$customer->first_name);
         $data = $customer->toArray();
-        $data['edumanager_url'] = route('/home');
+        $data['edumanager_url'] = route('/');
         $data['info_mail_address'] = 'sales.infotainment@aamra.com.bd';
 
 
