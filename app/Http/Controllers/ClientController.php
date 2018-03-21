@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\CustomerCredential;
+use Illuminate\Support\Facades\Mail;
 
 class ClientController extends Controller
 {
