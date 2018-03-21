@@ -1,9 +1,75 @@
-@extends('front.master')
+@extends('admin.master', ['body_class' => 'blog-page blog-archive-page'])
 @section('body')
-    <div class="headline-bg">
-    </div><!--//headline-bg-->
 
-    <!-- ******Video Section****** -->
+
+        <!-- ******BLOG LIST****** -->
+<div class="blog blog-category blog-archive container">
+    <h2 class="page-title text-center"><i class="fa fa-archive"></i> Manage Customers</h2>
+
+    <div class="blog-list blog-category-list">
+        @if(Session::get('message'))
+            <div class="alert alert-success" role="alert">
+                <strong>Well done!</strong> {{Session::get('message')}}
+            </div>
+        @endif
+        <div class="row">
+
+            @foreach($customers as $customer)
+                <article class="post mr-lg-auto ml-lg-auto col-12 col-lg-10">
+                    <div class="post-inner">
+                        <div class="content-head text-right">
+                            <a href="{{route('/view-client',[$customer->id])}}" class="btn btn-success btn-xs">
+                                <span class="glyphicon glyphicon-zoom-in"></span>
+                            </a>
+                            {{--@if($customer->publication_status == 1)--}}
+                            {{--<a href="{{route('unpublished-product',['id'=>$customer->id])}}" class="btn btn-info btn-xs">--}}
+                            {{--<span class="glyphicon glyphicon-arrow-up"></span>--}}
+                            {{--</a>--}}
+                            {{--@else--}}
+                            {{--<a href="{{route('published-product',['id'=>$customer->id])}}" class="btn btn-warning btn-xs">--}}
+                            {{--<span class="glyphicon glyphicon-arrow-down"></span>--}}
+                            {{--</a>--}}
+                            {{--@endif--}}
+                            <a href="{{route('/send-mail',[$customer->id])}}" class="btn btn-info btn-xs">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </a>
+                            <a
+                                    class="btn btn-danger btn-xs"
+                                    href="{{route('/delete-client',[$customer->id])}}"
+                                    onclick="return confirm('Are You Sure ?')">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="date-label">
+                                <span class="month">{{$customer->created_at->format('M')}}</span>
+                                <span class="date-number">{{$customer->created_at->day}}</span>
+                            </div>
+                            <h3 class="post-title"><a href="{{route('/view-client',[$customer->id])}}">{{$customer->first_name}} {{$customer->last_name}}</a></h3>
+                            <div class="meta">
+                                <ul class="meta-list list-inline">
+                                    <li class="list-inline-item post-author"><i class="fa fa-envelope"></i>{{$customer->email_address}}</li>
+                                    <li class="list-inline-item post-comments-link"><i class="fa fa-phone"></i>{{$customer->mobile_number}}</li>
+                                </ul><!--//meta-list-->
+                            </div><!--meta-->
+                            <div class="post-entry">
+                                <p><i class="fa fa-address-book"></i> {{$customer->address}}</p>
+                                <a class="read-more" href="{{route('/view-client',[$customer->id])}}">Read more <i class="fa fa-long-arrow-right"></i></a>
+                            </div>
+                        </div><!--//content-->
+                    </div><!--//post-inner-->
+                </article><!--//post-->
+            @endforeach
+        </div><!--//row-->
+    </div><!--//blog-list-->
+
+</div><!--//blog-->
+
+
+
+
+
+<!-- ******Video Section****** -->
     <section class="contact-section section section-on-bg">
         <div class="container-fluid">
             <h2 class="title text-center">Manage Customers</h2>
@@ -43,7 +109,7 @@
                                         <td>{{$customer->address}}</td>
                                         {{--                                    <td>{{$customer->publication_status == 1 ? 'Published' : 'Unpublished'}}</td>--}}
                                         <td>
-                                            <a href="{{route('/view-customer',[$customer->id])}}" class="btn btn-success btn-xs">
+                                            <a href="{{route('/view-client',[$customer->id])}}" class="btn btn-success btn-xs">
                                             <span class="glyphicon glyphicon-zoom-in"></span>
                                             </a>
                                             {{--@if($customer->publication_status == 1)--}}
@@ -60,7 +126,7 @@
                                             </a>
                                             <a
                                             class="btn btn-danger btn-xs"
-                                            href="{{route('/delete-customer',[$customer->id])}}"
+                                            href="{{route('/delete-client',[$customer->id])}}"
                                             onclick="return confirm('Are You Sure ?')">
                                             <span class="glyphicon glyphicon-trash"></span>
                                             </a>

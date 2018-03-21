@@ -12,12 +12,12 @@
 */
 
 //Route::get('/', function () {
-//    return view('welcome');
+//    return view('front.home.home-content');
 //});
 
 Route::get('/',[
-    'uses'=>'HomeController@index',
-    'as'=>'/home'
+    'uses'=>'CompanyController@index',
+    'as'=>'/'
 ]);
 Route::get('/features/all',[
     'uses'=>'FeatureController@index',
@@ -67,43 +67,50 @@ Route::get('/customer-email-check/{email}', [
     'uses'  =>'CustomerController@customerEmailCheck',
     'as'    =>'customer-email-check'
 ]);
-Route::get('/customer/all',[
-    'uses'=>'CustomerController@allCustomers',
-    'as'=>'/customers'
+
+//************Manage Client****************//
+
+Route::get('/client/all',[
+    'uses'=>'ClientController@allClients',
+    'as'=>'/clients'
+]);
+Route::get('client/view-client/{id}',[
+    'uses'=>'ClientController@viewclientInfo',
+    'as'=>'/view-client'
 ]);
 
-
-
-Route::get('customer/view-customer/{id}',[
-    'uses'=>'CustomerController@viewCustomerInfo',
-    'as'=>'/view-customer'
-]);
-
-Route::get('customer/unpublished/{id}',[
-    'uses'=>'CustomerController@unpublishedCustomerInfo',
+Route::get('client/unpublished/{id}',[
+    'uses'=>'ClientController@unpublishedCustomerInfo',
     'as'=>'unpublished-customer'
 ]);
-Route::get('customer/published/{id}',[
-    'uses'=>'CustomerController@publishedCustomerInfo',
+Route::get('client/published/{id}',[
+    'uses'=>'ClientController@publishedCustomerInfo',
     'as'=>'published-customer'
 ]);
-Route::get('customer/customer-details/{id}',[
-    'uses'=>'SuperMarketController@customerDetails',
-    'as'=>'customer-details'
-]);
-Route::get('customer/send-mail/{id}',[
-    'uses'=>'CustomerController@sendMainToCustomer',
+
+Route::get('client/send-mail/{id}',[
+    'uses'=>'ClientController@sendMainToClient',
     'as'=>'/send-mail'
 ]);
-Route::post('/customer/mail/send',[
-    'uses'=>'CustomerController@saveCustomerMailInfo',
-    'as'=>'/save-customer-mail-info'
+Route::post('/client/mail/send',[
+    'uses'=>'ClientController@saveClientMailInfo',
+    'as'=>'/save-client-mail-info'
 ]);
-Route::get('customer/delete/{id}',[
-    'uses'=>'CustomerController@deleteCustomer',
-    'as'=>'/delete-customer'
+Route::get('client/delete/{id}',[
+    'uses'=>'ClientController@deleteCustomer',
+    'as'=>'/delete-client'
 ]);
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/customer/shipping/info/{id}', [
+    'uses'  =>  'CustomerController@shippingInfo',
+    'as'    =>  '/shipping-info'
+]);
 
+Route::post('/customer/shipping/info/save', [
+    'uses'  =>  'CustomerController@saveShippingInfo',
+    'as'    =>  '/save-shipping-info'
+]);

@@ -1,4 +1,4 @@
-@extends('front.master')
+@extends('front.master', ['body_class' => 'home-page'])
 @section('body')
     <div class="bg-slider-wrapper">
         <div class="flexslider bg-slider">

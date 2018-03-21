@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
+    public function index(){
+        return view('front.home.home-content');
+    }
     public function downloadApps(){
         return view('front.company.download-apps');
     }

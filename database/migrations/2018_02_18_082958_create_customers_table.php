@@ -17,7 +17,8 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email_address');
+            $table->string('email_address',191)->index();
+            $table->string('password');
             $table->string('mobile_number');
             $table->string('address');
             $table->string('name_of_institution')->nullable();

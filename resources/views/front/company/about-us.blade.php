@@ -1,4 +1,4 @@
-@extends('front.master')
+@extends('front.master',['body_class' => 'about-page'])
 @section('body')
     <div class="headline-bg about-headline-bg">
     </div><!--//headline-bg-->

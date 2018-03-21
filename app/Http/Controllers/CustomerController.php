@@ -7,18 +7,38 @@ use App\CustomerCredential;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
+    private $packageDetails = [
+        1 => [
+            'name' => 'CORE',
+            'price' => 150000
+        ],
+        2 => [
+            'name' => 'ADVANCED',
+            'price' => 300000
+        ],
+        3 => [
+            'name' => 'ENTERPRISE',
+            'price' => 500000
+        ]
+    ];
     public function signUp(){
-        return view('front.customers.sign-up');
+        if($this->checkLogin()){
+            return redirect('/pricing/all');
+        }else{
+            return view('front.customers.sign-up');
+        }
 //        return view('front.mails.registration-mail');
     }
     public function addCustomer(Request $request){
         $this->validate($request, [
-            'first_name' => 'required|alpha|max:50',
-            'last_name' => 'required|alpha|max:50',
-            'email_address' => 'email|max:50',
+            'first_name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
+            'email_address' => 'required|string|email|max:50|unique:customers',
+            'password' => 'required|string|min:6|confirmed',
             'mobile_number' => 'required|max:20',
             'address' => 'required|max:200',
             'name_of_institution' => 'max:254',
@@ -32,7 +52,7 @@ class CustomerController extends Controller
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
         $customer->email_address = $request->email_address;
-        $customer->password = $request->password;
+        $customer->password = bcrypt($request->password);
         $customer->mobile_number = $request->mobile_number;
         $customer->address = $request->address;
         $customer->name_of_institution = $request->name_of_institution;
@@ -45,7 +65,7 @@ class CustomerController extends Controller
         Session::put('CustomerName',$customer->first_name);
         $data = $customer->toArray();
         $data['edumanager_url'] = route('/home');
-        $data['info_mail_address'] = 'info@edumanager.net';
+        $data['info_mail_address'] = 'sales.infotainment@aamra.com.bd';
 
 
         Mail::send('front.mails.registration-mail',$data, function ($message) use ($data){
@@ -63,19 +83,30 @@ class CustomerController extends Controller
     }
 
     public function signInForm(){
-        return view('front.customers.sign-in');
+        if($this->checkLogin()){
+            return redirect('/');
+        }else{
+            return view('front.customers.sign-in');
+        }
     }
 
     public function signInCustomer(Request $request){
 //        return $request;
         $email = $request->email;
-        $customer = Customer::where('email_address',$email)->first();
-        if($customer){
-            Session::put('CustomerId',$customer->id);
-            Session::put('CustomerName',$customer->first_name);
-            return redirect('/');
+        $password = $request->password;
+        $customer = Customer::where(['email_address' => $email, 'is_deleted' => 0])->first();
+        if ($customer)
+        {
+            if (Hash::check($password, $customer->password))
+            {
+                Session::put('CustomerId',$customer->id);
+                Session::put('CustomerName',$customer->first_name);
+                return redirect('/pricing/all');
+            }else{
+                return redirect('/customer/sign-in/new')->with('message','Password not match');
+            }
         }else{
-            return redirect('/customer/sign-in/new')->with('message','E-mail Error');
+            return redirect('/customer/sign-in/new')->with('message','User is not available');
         }
     }
 
@@ -92,79 +123,35 @@ class CustomerController extends Controller
         }else{
             echo 'Email Available';
         }
-
     }
 
-    public function allCustomers(){
-        $customers = Customer::all();
-        return view('front.customers.manage-customers',['customers'=>$customers]);
+    private function checkLogin(){
+        $customer = Customer::find(Session::get('CustomerId'));
+        if($customer){
+            return $customer;
+        }else{
+            return false;
+        }
     }
 
-    public function viewCustomerInfo($id){
-        $customer = Customer::find($id);
-        return view('front.customers.view-customer',['customer'=>$customer]);
+    public function shippingInfo($package_id){
+        if($this->checkLogin()){
+//            return $this->packageDetails[$package_id];
+            return view('front.checkout.show-shipping',['customer'=>$this->checkLogin(),'package'=> $this->packageDetails[$package_id]]);
+        }else{
+            return redirect('/customer/sign-up')->with('message','You have to registration first');
 
+        }
     }
 
-    public function sendMainToCustomer($id){
-        $customer = Customer::find($id);
+    public function saveShippingInfo($package_id){
+        if($this->checkLogin()){
+//            return $this->packageDetails[$package_id];
+            return view('front.checkout.show-shipping',['customer'=>$this->checkLogin(),'package'=> $this->packageDetails[$package_id]]);
+        }else{
+            return redirect('/customer/sign-up')->with('message','You have to registration first');
 
-
-        return view('front.customers.customer-mail',['customer'=>$customer]);
-
-    }
-
-    public function saveCustomerMailInfo(Request $request){
-        $this->validate($request, [
-            'demo_url' => 'required|max:50',
-            'admin_id' => 'required|max:50',
-            'admin_pass' => 'required|max:50',
-            'employee_id' => 'required|max:50',
-            'employee_pass' => 'required|max:50',
-            'student_id' => 'required|max:50',
-            'student_pass' => 'required|max:50',
-            'parent_id' => 'required|max:50',
-            'parent_pass' => 'required|max:50'
-        ]);
-//        return $request;
-        $customer_credential = new CustomerCredential();
-        $customer_credential->customer_id = $request->customer_id;
-        $customer_credential->demo_url = $request->demo_url;
-        $customer_credential->admin_id = $request->admin_id;
-        $customer_credential->admin_pass = $request->admin_pass;
-        $customer_credential->employee_id = $request->employee_id;
-        $customer_credential->employee_pass = $request->employee_pass;
-        $customer_credential->student_id = $request->student_id;
-        $customer_credential->student_pass = $request->student_pass;
-        $customer_credential->parent_id = $request->parent_id;
-        $customer_credential->parent_pass = $request->parent_pass;
-        $customer_credential->save();
-        $data = $customer_credential->toArray();
-        $data['first_name'] = $request->first_name;
-        $data['last_name'] = $request->last_name;
-        $data['email_address'] = $request->email_address;
-        $data['pricing_url'] = route('/pricing');
-        $data['about_us_url'] = route('/about-us');
-        $data['contact_us_url'] = route('/contact');
-        $data['features_url'] = route('/features');
-//        return $data;
-        Mail::send('front.mails.congratulation-mail',$data, function ($message) use ($data){
-            $message->to($data['email_address']);
-            $message->subject('Get started with your EduManager Demo!');
-        });
-
-        return redirect('customer/view-customer/'.$customer_credential->customer_id)->with('message','Mail Send Successfully.');
-//        return redirect('/customer/confirmation-message');
-
-    }
-
-    public function deleteCustomer($id){
-        $customer = Customer::find($id);
-        $customer->is_deleted = true;
-        $customer->save();
-//        $customer->delete();
-        return redirect('/customer/all')->with('message','Customer Inactivated successfully');
-
+        }
     }
 
 

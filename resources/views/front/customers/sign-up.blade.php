@@ -1,4 +1,4 @@
-@extends('front.customers.master')
+@extends('front.customers.master' , ['body_class' => 'signup-page access-page has-full-screen-bg'])
 @section('body')
     <!-- ******Signup Section****** -->
     <section class="signup-section access-section section">
@@ -112,7 +112,7 @@
                                 </div>
                                 <p class="note">By signing up, you agree to our terms of services and privacy
                                     policy.</p>
-                                <p class="lead">Already have an account? <a class="login-link" id="login-link" href="{{route('/customer-sign-in')}}">Log in</a></p>
+                                <p class="lead">Already have an account? <a class="login-link" id="login-link" href="{{route('/customer-sign-in-form')}}">Log in</a></p>
                                 {{Form::close()}}
                                 {{--<form action="{{route('/add-new-customer')}}" class="signup-form" method="post">--}}
                                 {{--{{csrf_field()}}--}}

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('front.includes.head')
+@include('front.customers.head')
 
-<body class="signup-page access-page has-full-screen-bg">
+<body
+        @unless(empty($body_class))
+        class="{{$body_class}}"
+        @endunless
+>
 <div class="upper-wrapper">
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container">
             <h1 class="logo">
-                <a href="{{route('/home')}}">
+                <a href="{{URL::to('/')}}">
                     <img src="{{asset('/')}}front/images/logo.png" alt="LOGO" width="160" height="78"/>
                 </a>
                 {{--<a href="{{route('/home')}}"><span class="logo-icon"></span><span class="text">Aamra</span></a>--}}

@@ -8,12 +8,12 @@
         @endunless
 >
 <div class="wrapper">
-    @include('front.includes.header', [ 'header_id' => 'header',  'header_class' => 'header navbar-fixed-top'])
+    @include('admin.includes.header', ['header_class' => 'header header-blog'])
 
     @yield('body')
 </div><!--//wrapper-->
 
-@include('front.includes.footer')
+@include('admin.includes.footer')
 @include('front.includes.modal')
 @include('front.includes.scripts')
 

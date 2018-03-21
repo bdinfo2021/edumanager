@@ -1,4 +1,4 @@
-@extends('front.master')
+@extends('front.master',['body_class' => 'pricing-page'])
 @section('body')
     <div class="headline-bg pricing-headline-bg">
     </div><!--//headline-bg-->
@@ -56,7 +56,7 @@
                                     <li><i class="fa fa-check"></i>Webinar Based Training</li>
                                     <li><i class="fa fa-check"></i>Best for School</li>
                                 </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">GET STARTED NOW</a>
+                                <a class="btn btn-cta btn-cta-primary" href="{{route('/shipping-info',[1])}}">GET STARTED NOW</a>
                             </div><!--//content-->
                         </div><!--//item-inner-->
                     </div><!--//item-->
@@ -80,7 +80,7 @@
                                     <li><i class="fa fa-check"></i>Best for School/College</li>
                                     {{--<li class="disabled"><i class="fa fa-times"></i>24/7 support</li>--}}
                                 </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">GET STARTED NOW</a>
+                                <a class="btn btn-cta btn-cta-primary" href="{{route('/shipping-info',[2])}}">GET STARTED NOW</a>
                             </div><!--//content-->
                             <div class="ribbon">
                                 <div class="text">Popular</div>
@@ -130,7 +130,7 @@
                                     <li><i class="fa fa-check"></i>Onsite Dedicated Support</li>
                                     <li><i class="fa fa-check"></i>Best for School/College/University</li>
                                 </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="{{route('/customer-sign-up')}}">GET STARTED NOW</a>
+                                <a class="btn btn-cta btn-cta-primary" href="{{route('/shipping-info',[3])}}">GET STARTED NOW</a>
                             </div><!--//content-->
                         </div><!--//item-inner-->
                     </div><!--//item-->

@@ -1,17 +1,15 @@
-@extends('front.master')
+@extends('admin.master',['body_class' => 'blog-page blog-archive-page'])
 @section('body')
-    <div class="headline-bg contact-headline-bg">
-    </div><!--//headline-bg-->
-
+        <!-- ******BLOG LIST****** -->
+<div class="blog blog-category blog-archive container">
+    <h2 class="page-title text-center"><i class="fa fa-archive"></i>Client Mail</h2>
 
     <!-- ******Contact Section****** -->
-    <section class="contact-section section section-on-bg">
+    {{--<section class="contact-section section section-on-bg">--}}
         <div class="container">
-            <h2 class="title text-center">Customer Mail</h2>
-            <p class="intro text-center">Use this form to send mail :</p>
-
-
-            {{Form::open(['route'=>'/save-customer-mail-info','class'=>'contact-form','method'=>'POST','name'=>'registration'])}}
+            {{--<h2 class="title text-center">Client Mail</h2>--}}
+            {{--<p class="intro text-center">Use this form to send mail :</p>--}}
+            {{Form::open(['route'=>'/save-client-mail-info','class'=>'contact-form','method'=>'POST','name'=>'registration'])}}
             <div class="row">
                 <div class="contact-form-inner mr-lg-auto ml-lg-auto col-12 col-lg-8">
 
@@ -95,7 +93,8 @@
             <div id="form-messages"></div>
             {{Form::close()}}<!--//contact-form-->
         </div><!--//container-->
-    </section><!--//contact-section-->
+    {{--</section><!--//contact-section-->--}}
+</div>
     @endsection
     @section('scripts')
             <!-- contact page specific js starts -->

@@ -1,12 +1,10 @@
-@extends('front.master')
+@extends('admin.master', ['body_class' => 'blog-page blog-archive-page'])
 @section('body')
-    <div class="headline-bg">
-    </div><!--//headline-bg-->
 
-    <!-- ******Video Section****** -->
-    <section class="contact-section section section-on-bg">
+        <!-- ******BLOG LIST****** -->
+<div class="blog blog-category blog-archive container">
+    <h2 class="page-title text-center"><i class="fa fa-archive"></i> Client Details</h2>
         <div class="container-fluid">
-            <h2 class="title text-center">Customers Details</h2>
             <div class="row text-left">
                 <div class="col-sm-8 mx-auto">
                     <div class="panel">
@@ -74,6 +72,6 @@
             <!--<iframe src="https://player.vimeo.com/video/90299717" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
             <!--</div>&lt;!&ndash;//video-container&ndash;&gt; -->
         </div><!--//container-->
-    </section><!--//feature-video-->
+    </div><!--//feature-video-->
 
 @endsection

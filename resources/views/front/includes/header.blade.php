@@ -1,8 +1,15 @@
 <!-- ******HEADER****** -->
-<header id="header" class="header navbar-fixed-top">
+<header
+        @unless(empty($header_class))
+            class="{{$header_class}}"
+        @endunless
+        @unless(empty($header_id))
+        id="{{$header_id}}"
+        @endunless
+>
     <div class="container">
         {{--<h1 class="logo">--}}
-            <a href="{{route('/home')}}">
+            <a href="{{route('/')}}">
                 <img src="{{asset('/')}}front/images/logo.png" alt="LOGO" width="160" height="78"/>
                 {{--<span class="text">Aamra</span>--}}
             </a>
@@ -38,7 +45,7 @@
 
 
                     @if(Session::get('CustomerId'))
-                        <li class="nav-item"><a class="nav-link" href="{{route('/customers')}}">Customers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('/clients')}}">Clients</a></li>
                         <li class="nav-item nav-item-cta last"><a class="nav-link" href="#" onclick="document.getElementById('customerLogoutForm').submit();">Logout</a></li>
                         <form action="{{route('/customer-sign-out')}}" method="POST" id="customerLogoutForm">
                             {{csrf_field()}}
