@@ -67,7 +67,7 @@ class ClientController extends Controller
         $data['contact_us_url'] = route('/contact');
         $data['features_url'] = route('/features');
 //        return $data;
-        Mail::send('admin.clients.congratulation-mail',$data, function ($message) use ($data){
+        Mail::send('admin.mails.congratulation-mail',$data, function ($message) use ($data){
             $message->to($data['email_address']);
             $message->subject('Get started with your EduManager Demo!');
         });
