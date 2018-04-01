@@ -62,6 +62,7 @@ class ClientController extends Controller
         $data['first_name'] = $request->first_name;
         $data['last_name'] = $request->last_name;
         $data['email_address'] = $request->email_address;
+        $data['bcc_email_address'] = ['sanaulla.ict@gmail.com','fazle.rabbi@aamra.com.bd'];
         $data['pricing_url'] = route('/pricing');
         $data['about_us_url'] = route('/about-us');
         $data['contact_us_url'] = route('/contact');
@@ -69,6 +70,7 @@ class ClientController extends Controller
 //        return $data;
         Mail::send('admin.mails.congratulation-mail',$data, function ($message) use ($data){
             $message->to($data['email_address']);
+            $message->bcc($data['bcc_email_address']);
             $message->subject('Get started with your EduManager Demo!');
         });
 
