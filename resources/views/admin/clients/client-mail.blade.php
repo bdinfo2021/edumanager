@@ -46,7 +46,7 @@
                             <div class="invalid-feedback">{{$errors->has('admin_id') ? $errors->first('admin_id') : ''}}</div>
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('admin_pass','administrator123',array('required' => 'required', 'placeholder' => 'Admin Pass', 'class' => 'form-control '.$errors->first('admin_pass','is-invalid')))}}
+                            {{Form::text('admin_pass','administrator123',array('required' => 'required', 'placeholder' => 'Admin Password', 'class' => 'form-control '.$errors->first('admin_pass','is-invalid')))}}
                             <div class="invalid-feedback">{{$errors->has('admin_pass') ? $errors->first('admin_pass') : ''}}</div>
                         </div>
                     </div><!--//form-group-->
@@ -57,7 +57,7 @@
                             <div class="invalid-feedback">{{$errors->has('employee_id') ? $errors->first('employee_id') : ''}}</div>
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('employee_pass','EMP-0123',array('required' => 'required', 'placeholder' => 'Employee Pass', 'class' => 'form-control '.$errors->first('employee_pass','is-invalid')))}}
+                            {{Form::text('employee_pass','EMP-0123',array('required' => 'required', 'placeholder' => 'Employee Password', 'class' => 'form-control '.$errors->first('employee_pass','is-invalid')))}}
                             <div class="invalid-feedback">{{$errors->has('employee_pass') ? $errors->first('employee_pass') : ''}}</div>
                         </div>
                     </div><!--//form-group-->
@@ -68,7 +68,7 @@
                             <div class="invalid-feedback">{{$errors->has('student_id') ? $errors->first('student_id') : ''}}</div>
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('student_pass','STD-0123',array('required' => 'required', 'placeholder' => 'Student Pass', 'class' => 'form-control '.$errors->first('student_pass','is-invalid')))}}
+                            {{Form::text('student_pass','STD-0123',array('required' => 'required', 'placeholder' => 'Student Password', 'class' => 'form-control '.$errors->first('student_pass','is-invalid')))}}
                             <div class="invalid-feedback">{{$errors->has('student_pass') ? $errors->first('student_pass') : ''}}</div>
                         </div>
                     </div><!--//form-group-->
@@ -79,7 +79,7 @@
                             <div class="invalid-feedback">{{$errors->has('parent_id') ? $errors->first('parent_id') : ''}}</div>
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('parent_pass','pSTD-0123',array('required' => 'required', 'placeholder' => 'Parent Pass', 'class' => 'form-control '.$errors->first('parent_pass','is-invalid')))}}
+                            {{Form::text('parent_pass','pSTD-0123',array('required' => 'required', 'placeholder' => 'Parent Password', 'class' => 'form-control '.$errors->first('parent_pass','is-invalid')))}}
                             <div class="invalid-feedback">{{$errors->has('parent_pass') ? $errors->first('parent_pass') : ''}}</div>
                         </div>
                     </div><!--//form-group-->

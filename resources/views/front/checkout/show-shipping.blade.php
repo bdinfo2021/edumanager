@@ -20,25 +20,32 @@
                     {{--</div>--}}
 
                     <div class="row">
-                        <div class="col-md-4 order-md-2 mb-4">
+                        <div class="col-md-5 order-md-2 mb-5">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-muted">Your cart</span>
                                 <span class="badge badge-secondary badge-pill">3</span>
                             </h4>
                             <ul class="list-group mb-3">
-                                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                    <div>
-                                        <h6 class="my-0">Product name</h6>
-                                        <small class="text-muted">{{$package['name']}}</small>
+                                <li class="list-group-item d-flex justify-content-between bg-light">
+                                    <div class="text-success">
+                                        <h6 class="my-0"><input type="checkbox" disabled="disabled" checked="checked" class="product_price" rel="5000"> Signup & Configuration Fee</h6>
+                                        <small>One Time</small>
                                     </div>
-                                    <span class="text-muted"> ৳ {{$package['price']}}</span><input type="checkbox" class="product_price" rel="{{$package['price']}}">
+                                    <span class="text-success">৳ 5000</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
-                                        <h6 class="my-0">Onside Support</h6>
+                                        <h6 class="my-0"><input type="checkbox" disabled="disabled" checked="checked" class="product_price" rel={{$package['price']}}> Monthly Package Fee</h6>
+                                        <small class="text-muted">{{$package['name']}}</small>
+                                    </div>
+                                    <span class="text-muted"> ৳ {{$package['price']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                    <div>
+                                        <h6 class="my-0"><input type="checkbox" class="product_price" rel="45000"> Onside Support Fee</h6>
                                         <small class="text-muted">Per Month</small>
                                     </div>
-                                    <span class="text-muted">৳ 45,000</span><input type="checkbox" class="product_price" rel="45000">
+                                    <span class="text-muted">৳ 45,000</span>
                                 </li>
                                 {{--<li class="list-group-item d-flex justify-content-between lh-condensed">--}}
                                     {{--<div>--}}
@@ -47,13 +54,6 @@
                                     {{--</div>--}}
                                     {{--<span class="text-muted">৳ 5,000</span>--}}
                                 {{--</li>--}}
-                                <li class="list-group-item d-flex justify-content-between bg-light">
-                                    <div class="text-success">
-                                        <h6 class="my-0">First Time</h6>
-                                        <small>One Time</small>
-                                    </div>
-                                    <span class="text-success">৳ 5000</span><input type="checkbox" class="product_price" rel="5000">
-                                </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total (BDT)</span>
                                     <strong> ৳ <span id="total_amount"></span></strong>
@@ -69,7 +69,7 @@
                                 {{--</div>--}}
                             {{--</form>--}}
                         </div>
-                        <div class="col-md-8 order-md-1">
+                        <div class="col-md-7 order-md-1">
                             <h4 class="mb-3">Billing address</h4>
 {{--                            {{Form::open(['route'=>'/save-shipping-info','class'=>'contact-form','method'=>'POST','name'=>'registration'])}}--}}
                             <form class="needs-validation" novalidate="" _lpchecked="1">
@@ -178,57 +178,61 @@
 
                                 <div class="d-block my-3">
                                     <div class="custom-control custom-radio">
-                                        <input id="credit" name="paymentMethod" type="radio"
+                                        <input id="bank-payment" name="paymentMethod" type="radio"
                                                class="custom-control-input" checked=""
                                                required="">
-                                        <label class="custom-control-label" for="credit">Credit card</label>
+                                        <label class="custom-control-label" for="bank-payment">Bank Payment</label>
                                     </div>
+                                    {{--<div class="custom-control custom-radio">--}}
+                                        {{--<input id="debit" name="paymentMethod" type="radio" class="custom-control-input"--}}
+                                               {{--required="">--}}
+                                        {{--<label class="custom-control-label" for="debit">Debit card</label>--}}
+                                    {{--</div>--}}
                                     <div class="custom-control custom-radio">
-                                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
-                                               required="">
-                                        <label class="custom-control-label" for="debit">Debit card</label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input id="paypal" name="paymentMethod" type="radio"
+                                        <input id="online-payment" name="paymentMethod" type="radio"
                                                class="custom-control-input"
                                                required="">
-                                        <label class="custom-control-label" for="paypal">Paypal</label>
+                                        <label class="custom-control-label" for="online-payment">Online Payment</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                        <small class="text-muted">Full name as displayed on card</small>
-                                        <div class="invalid-feedback">
-                                            Name on card is required
+                                <div id="online-payment-area">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-6">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label" for="customFile">Upload Deposit Clip </label>
+                                            <small class="text-muted">Please deposite the total amount to: <br/> Bank: <b>Dutch bangla Bank Ltd.</b>
+                                                <br/> A/C No : <b>XXX.XXX.XXXXXX</b> <br/> & upload the image of the deposite slip</small>
+                                            <div class="invalid-feedback">
+                                                Name on card is required
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="cc-number">Credit card number</label>
-                                        <input type="text" class="form-control" id="cc-number" placeholder=""
-                                               required="">
-                                        <div class="invalid-feedback">
-                                            Credit card number is required
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3 mb-3">
-                                        <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" id="cc-expiration" placeholder=""
-                                               required="">
-                                        <div class="invalid-feedback">
-                                            Expiration date required
+                                <div id="bank-payment-area" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-6">
+                                            <img src="{{asset('/')}}front/images/checkout/online-payment.png" class="img-fluid" alt="Responsive image">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label for="cc-expiration">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                                        <div class="invalid-feedback">
-                                            Security code required
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-md-3 mb-3">--}}
+                                            {{--<label for="cc-expiration">Expiration</label>--}}
+                                            {{--<input type="text" class="form-control" id="cc-expiration" placeholder=""--}}
+                                                   {{--required="">--}}
+                                            {{--<div class="invalid-feedback">--}}
+                                                {{--Expiration date required--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3 mb-3">--}}
+                                            {{--<label for="cc-expiration">CVV</label>--}}
+                                            {{--<input type="text" class="form-control" id="cc-cvv" placeholder="" required="">--}}
+                                            {{--<div class="invalid-feedback">--}}
+                                                {{--Security code required--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
                                 <hr class="mb-4">
                                 <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout
@@ -268,6 +272,9 @@
     <script type="text/javascript" src="{{asset('/')}}front/plugins/jquery.validate.min.js"></script>
     <script type="text/javascript" src="{{asset('/')}}front/js/sign-up.js"></script>
     <script !src="">
+        $(document).ready(function() {
+            recalculate();
+        });
         $("#same-address").click(function() {
             // this function will get executed every time the #home element is clicked (or tab-spacebar changed)
             if($(this).is(":checked")) // "this" refers to the element that fired the event
@@ -297,5 +304,20 @@
 //            alert(sum);
             $('#total_amount').html(sum);
         }
+
+        $('input[type=radio]').on('change',function() {
+            if( $('#bank-payment').is(':checked') ) {
+                $('#bank-payment-area').hide();
+                $('#online-payment-area').show();
+            } else {
+                $('#bank-payment-area').show();
+                $('#online-payment-area').hide();
+            }
+        });
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $('.custom-file-label').html(fileName);
+        });
+
     </script>
 @endsection
