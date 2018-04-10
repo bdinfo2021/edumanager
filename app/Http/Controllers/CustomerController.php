@@ -144,48 +144,4 @@ class CustomerController extends Controller
         }
     }
 
-    protected function productImageUpload($request){
-        $productImage = $request->file('deposit_slip');
-        $imageName = $productImage->getClientOriginalName();
-        $directory = 'deposit_slip/'.$request->customer_id.'/';
-        $imageUrl = $directory.$imageName;
-//        $productImage->move($imageUrl);
-        $productImage->move($directory,$imageName);
-        return $imageUrl;
-    }
-
-    public function saveShippingInfo(Request $request){
-        $this->validate($request, [
-            'customer_id' => 'required|string|max:10',
-            'total_amount' => 'required|string|max:10',
-            'shipping_address' => 'required|string|max:200',
-            'country' => 'required|string|max:20',
-            'state' => 'required|max:20',
-            'zip' => 'required|max:20',
-            'paymentMethod' => 'max:20'
-        ]);
-        if($request->paymentMethod == 'bank_payment'){
-            $this->validate($request, [
-                'deposit_slip' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-            ]);
-            $imageUrl = $this->productImageUpload($request);
-            return $imageUrl;
-        }else{
-            return 'On Processing';
-        }
-
-        $shipping_info = new ShippingInfo();
-        $shipping_info->customer_id = $request->customer_id;
-        $shipping_info->total_amount = $request->total_amount;
-        $shipping_info->shipping_address = $request->shipping_address;
-        $shipping_info->country = $request->country;
-        $shipping_info->state = $request->state;
-        $shipping_info->zip = $request->zip;
-        $shipping_info->payment_method = $request->paymentMethod;
-        $shipping_info->deposit_slip = $imageUrl;
-        $shipping_info->save();
-//        return redirect('/product/add')->with('message','Product Info Save Successfully');
-        return view('front.customers.shipping-confirmation-message');
-    }
-
 }

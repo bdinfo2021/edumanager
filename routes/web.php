@@ -101,9 +101,17 @@ Route::get('client/delete/{id}',[
     'as'=>'/delete-client'
 ]);
 
+Route::get('/customer/deposit-slip/{id}', [
+    'uses'  =>  'ClientController@downloadDepositClip',
+    'as'    =>  '/download-deposit-slip'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//************Manage Checkout****************//
+
 
 Route::get('/customer/shipping/info/{id}', [
     'uses'  =>  'CustomerController@shippingInfo',
@@ -111,6 +119,6 @@ Route::get('/customer/shipping/info/{id}', [
 ]);
 
 Route::post('/customer/shipping/info/save', [
-    'uses'  =>  'CustomerController@saveShippingInfo',
+    'uses'  =>  'CheckoutController@saveShippingInfo',
     'as'    =>  '/save-shipping-info'
 ]);

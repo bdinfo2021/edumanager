@@ -55,8 +55,8 @@
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total (BDT)</span>
-                                    <strong> ৳ <span id="total_amount"></span></strong>
-                                    {{Form::hidden('total_amount','')}}
+                                    <strong> ৳ <span id="order_total"></span></strong>
+                                    {{Form::hidden('orderTotal','')}}
                                 </li>
                             </ul>
 
@@ -94,7 +94,7 @@
                             </div>
                             <div class="mb-3 form-group">
                                 <label for="shipping_address">Shipping Address</label>
-                                {{Form::text('shipping_address','',array('id' => 'shipping_address', 'required' => 'required', 'placeholder' => 'Your Address', 'class' => 'form-control '.$errors->first('shipping_address','is-invalid')))}}
+                                {{Form::text('shippingAddress','',array('id' => 'shipping_address', 'required' => 'required', 'placeholder' => 'Your Address', 'class' => 'form-control '.$errors->first('shipping_address','is-invalid')))}}
                                 <div class="invalid-feedback">{{$errors->has('shipping_address') ? $errors->first('shipping_address') : ''}}</div>
                             </div>
                             <div class="row">
@@ -128,13 +128,13 @@
 
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="bank-payment" name="paymentMethod" type="radio"
+                                    <input id="bank-payment" name="paymentType" type="radio"
                                            class="custom-control-input" checked=""
                                            required="" value='bank_payment'>
                                     <label class="custom-control-label" for="bank-payment">Bank Payment</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="online-payment" name="paymentMethod" type="radio"
+                                    <input id="online-payment" name="paymentType" type="radio"
                                            class="custom-control-input"
                                            required="" value="online_payment">
                                     <label class="custom-control-label" for="online-payment">Online Payment</label>
@@ -144,7 +144,7 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-6 form-group">
                                         <div class="custom-file">
-                                            {{Form::file('deposit_slip', array('id' => 'deposit_slip', 'required' => 'required', 'accept'=>"image/*", 'class' => 'custom-file-input form-control '.$errors->first('deposit_slip','is-invalid')))}}
+                                            {{Form::file('depositSlip', array('id' => 'deposit_slip', 'required' => 'required', 'accept'=>"image/*", 'class' => 'custom-file-input form-control '.$errors->first('deposit_slip','is-invalid')))}}
                                             <small>
                                                 <b>Type:</b> jpeg | png | jpg | gif | svg <b>Maximum Size:</b> 2 MB
                                             </small>
@@ -210,18 +210,16 @@
                 recalculate();
             });
             function recalculate() {
-                var sum = 0;
-
+                var orderTotal = 0;
                 $(".product_price").each(function () {
                     if ($(this).is(":checked")) // "this" refers to the element that fired the event
                     {
-                        sum += parseInt($(this).attr("rel"));
+                        orderTotal += parseInt($(this).attr("rel"));
 //                    alert($(this).attr("rel"));
                     }
                 });
-//            alert(sum);
-                $('#total_amount').html(sum);
-                $('input[name=total_amount]').val(sum);
+                $('#order_total').html(orderTotal);
+                $('input[name=orderTotal]').val(orderTotal);
             }
 
             $("#same-address").click(function () {
@@ -236,25 +234,18 @@
             });
 
             $('input[type=radio]').on('change', function () {
-                var xyz = '{{Form::file('deposit_slip', ['required'=>'required','class'=>'custom-file-input form-control','accept'=>"image/*"])}}';
-                var xxx = $('<div />', {
-                    "class": 'testssss',
-                    text: "a div",
-                    click: function(e){
-                        e.preventDefault();
-                        alert("test")
-                    }})
+                var depositSlipTextfield = '{{Form::file('depositSlip', ['required'=>'required','class'=>'custom-file-input form-control','accept'=>"image/*"])}}';
                 if ($('#bank-payment').is(':checked')) {
                     $('#bank-payment-area').hide();
                     $('#online-payment-area').show();
-                    $(".custom-file").prepend(xyz);
+                    $(".custom-file").prepend(depositSlipTextfield);
                 } else {
                     $('#bank-payment-area').show();
                     $('#online-payment-area').hide();
-                    $('input[name="deposit_slip"]').remove();
+                    $('input[name="depositSlip"]').remove();
                 }
             });
-            $('input[type="file"]').change(function (e) {
+            $('.custom-file').on('change','input[type="file"]',function(e){
                 var fileName = e.target.files[0].name;
                 $('.custom-file-label').html(fileName);
             });

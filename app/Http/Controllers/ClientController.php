@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\OrderDetails;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\CustomerCredential;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Response;
 
 class ClientController extends Controller
 {
@@ -15,15 +18,41 @@ class ClientController extends Controller
     }
 
     public function allClients(){
-        $customers = Customer::all();
+//        $customers = Customer::all();
+        $customers = DB::table('customers')
+            ->leftJoin('customer_credentials','customers.id','=','customer_credentials.customer_id')
+            ->leftJoin('order_details','customers.id','=','order_details.customer_id')
+            ->selectRaw('customers.id, max(first_name) as first_name, max(last_name) as last_name, max(email_address) as email_address, max(mobile_number) as mobile_number, max(customers.created_at) as created_at, count(customer_credentials.id) as customer_credentials_id, count(order_details.id) as order_details_id, max(order_details.id) as last_order_details_id')
+            ->groupBy('customers.id')
+            ->get();
+//        return $customers;
+
         return view('admin.clients.manage-clients',['customers'=>$customers]);
     }
 
     public function viewClientInfo($id){
         $customer = Customer::find($id);
-        return view('admin.clients.view-client',['customer'=>$customer]);
+        $customer_credentials = CustomerCredential::where('customer_id',$customer->id)->get();
+        $order_details = OrderDetails::where('customer_id',$customer->id)->get();
+//        return $order_details;
+        return view('admin.clients.view-client',['customer'=>$customer,'customer_credentials'=>$customer_credentials,'order_details'=>$order_details]);
 
     }
+
+    public function downloadDepositClip($id){
+        $order_details = OrderDetails::find($id);
+//        return $order_details;
+        $file_path = public_path($order_details->deposit_slip);
+        return Response::download($file_path);
+
+        $customer = Customer::find($id);
+        $customer_credentials = CustomerCredential::where('customer_id',$customer->id)->get();
+//        return $order_details;
+        return view('admin.clients.view-client',['customer'=>$customer,'customer_credentials'=>$customer_credentials,'order_details'=>$order_details]);
+
+    }
+
+
 
     public function sendMainToClient($id){
         $customer = Customer::find($id);
