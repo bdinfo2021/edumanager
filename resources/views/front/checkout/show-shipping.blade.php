@@ -89,7 +89,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">@</span>
                                     </div>
-                                    {{Form::text('email_address',$customer->email_address,array('required' => 'required', 'readonly'=>true, 'placeholder' => 'Your Last Name', 'class' => 'form-control'))}}
+                                    {{Form::text('emailAddress',$customer->email_address,array('required' => 'required', 'readonly'=>true, 'placeholder' => 'Your Last Name', 'class' => 'form-control'))}}
                                 </div>
                             </div>
                             <div class="mb-3 form-group">
@@ -144,7 +144,7 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-6 form-group">
                                         <div class="custom-file">
-                                            {{Form::file('depositSlip', array('id' => 'deposit_slip', 'required' => 'required', 'accept'=>"image/*", 'class' => 'custom-file-input form-control '.$errors->first('deposit_slip','is-invalid')))}}
+{{--                                            {{Form::file('depositSlip', array('id' => 'deposit_slip', 'required' => 'required', 'accept'=>"image/*", 'class' => 'custom-file-input form-control '.$errors->first('deposit_slip','is-invalid')))}}--}}
                                             <small>
                                                 <b>Type:</b> jpeg | png | jpg | gif | svg <b>Maximum Size:</b> 2 MB
                                             </small>
@@ -232,8 +232,7 @@
                     $('#shipping_address').val('')
                 }
             });
-
-            $('input[type=radio]').on('change', function () {
+            function paymentType(){
                 var depositSlipTextfield = '{{Form::file('depositSlip', ['required'=>'required','class'=>'custom-file-input form-control','accept'=>"image/*"])}}';
                 if ($('#bank-payment').is(':checked')) {
                     $('#bank-payment-area').hide();
@@ -244,7 +243,12 @@
                     $('#online-payment-area').hide();
                     $('input[name="depositSlip"]').remove();
                 }
+            }
+
+            $('input[type=radio]').on('change', function () {
+                paymentType();
             });
+            window.onload = paymentType;
             $('.custom-file').on('change','input[type="file"]',function(e){
                 var fileName = e.target.files[0].name;
                 $('.custom-file-label').html(fileName);

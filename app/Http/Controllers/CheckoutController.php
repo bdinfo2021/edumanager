@@ -36,9 +36,35 @@ class CheckoutController extends Controller
 //        return redirect('/product/add')->with('message','Product Info Save Successfully');
             return view('front.checkout.shipping-confirmation-message');
         }else{
-            return 'On Processing';
+            $declineURL = 'http://aamraactive.com/active/member_payments/cancelpayment/';
+            $redirect_url = 'http://aamraactive.com/active/member_payments/successpayment/';
+            $cart_final = array(
+                'amount' => $request->orderTotal,
+                'extra' => "",
+                'notify_mobile' => '',
+                'notify_email' => $request->emailAddress,
+                'cancel_url' => "",
+                'transactionid' => "123456",
+                'fail_url' => "{$declineURL}",
+                'token' => "nV6M6Qi4EYNMP6dLMsTSbfV1PXpZVRaYo7Kv2Ts+h90=",
+                'success_url' => "{$redirect_url}"
+            );
+            $json = json_encode($cart_final);
+            $url_encode_data = urlencode($json);
+            $url = "http://ecom.aamrainfotainment.com/msp_test/PUBLIC_API/AccessToken.jsp?data={$url_encode_data}";
+            $ch = curl_init();
+            $timeout = 5;
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+            $data = curl_exec($ch);
+            curl_close($ch);
+            //$get_access_token = file_get_contents($url);
+            $get_access_token = $data;
+            $get_access_token = json_decode($get_access_token);
+            $access_token_url = "http://ecom.aamrainfotainment.com/msp_test/payment2.jsp?atoken=".urlencode($get_access_token->access_token);
+            return redirect($access_token_url);
         }
-
     }
 
     protected function productImageUpload($request){

@@ -34,9 +34,38 @@
                     </div><!--//form-group-->
                     <div class="form-group row required">
                         {{Form::label('demo_url','Demo URL',['class'=>"col-md-4 col-form-label"])}}
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             {{Form::url('demo_url','http://demo.edumanager.net',array('required' => 'required', 'placeholder' => 'Demo URL', 'class' => 'form-control '.$errors->first('demo_url','is-invalid')))}}
                             <div class="invalid-feedback">{{$errors->has('demo_url') ? $errors->first('demo_url') : ''}}</div>
+                        </div>
+                        <div class="col-md-2">
+                        <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                GET URL
+                            </button>
+
+                            <!-- The Modal -->
+                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body hosts-cx">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
                         </div>
                     </div><!--//form-group-->
                     <div class="form-group row required">
@@ -102,4 +131,7 @@
     {{--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>--}}
     <script type="text/javascript" src="{{asset('/')}}front/js/contact.js"></script>
     <!-- contact page specific js ends-->
+<script !src="">
+    $(".hosts-cx").html('<object data="https://hosts.cx" width="780px" height="500px" style="overflow:auto;" />');
+</script>
 @endsection
