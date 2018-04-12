@@ -106,6 +106,11 @@ Route::get('/customer/deposit-slip/{id}', [
     'as'    =>  '/download-deposit-slip'
 ]);
 
+Route::get('/customer/download-order-invoice/{id}', [
+    'uses'  =>  'ClientController@downloadOrderInvoice',
+    'as'    =>  '/download-order-invoice'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

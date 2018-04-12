@@ -10,6 +10,7 @@ use App\CustomerCredential;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ClientController extends Controller
 {
@@ -112,6 +113,16 @@ class ClientController extends Controller
 //        $customer->delete();
         return redirect('/client/all')->with('message','Client Inactivated successfully');
 
+    }
+
+    public function downloadOrderInvoice($id){
+        $online_payments = OnlinePayment::find($id);
+        $customer = Customer::find($online_payments->transaction_id);
+//        return $customer;
+//        return $online_payments;
+        return view('admin.clients.download-order-invoice',['online_payments'=>$online_payments,'customer'=>$customer]);
+        $pdf = PDF::loadView('admin.clients.download-order-invoice',['online_payments'=>$online_payments,'customer'=>$customer]);
+        return $pdf->download('invoice.pdf');
     }
 
 }

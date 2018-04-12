@@ -123,9 +123,14 @@
                                             <span class="glyphicon glyphicon-envelope"></span>
                                             </a>
                                             @if($customer->bank_payments_id >= 1)
-                                            <a href="{{route('/download-deposit-slip',['id'=>$customer->last_bank_payments_id])}}" class="btn btn-info btn-xs">
+                                            <a href="{{route('/download-deposit-slip',['id'=>$customer->last_bank_payments_id])}}" class="btn btn-warning btn-xs">
                                             <span class="glyphicon glyphicon-download-alt"></span>
                                             </a>
+                                            @endif
+                                            @if($customer->online_payments_id >= 1)
+                                                <a href="{{route('/download-order-invoice',['id'=>$customer->last_online_payments_id])}}" class="btn btn-dark btn-xs">
+                                                    <span class="glyphicon glyphicon-download"></span>
+                                                </a>
                                             @endif
                                             <a
                                             class="btn btn-danger btn-xs"
