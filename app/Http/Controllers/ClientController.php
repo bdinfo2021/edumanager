@@ -44,7 +44,7 @@ class ClientController extends Controller
     }
 
     public function downloadDepositClip($id){
-        $order_details = OrderDetails::find($id);
+        $order_details = BankPayment::find($id);
         $file_path = public_path($order_details->deposit_slip);
         return Response::download($file_path);
     }

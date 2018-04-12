@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\BankPayment;
 use Illuminate\Http\Request;
-use App\OrderDetails;
 use App\OnlinePayment;
 
 class CheckoutController extends Controller
@@ -26,16 +26,16 @@ class CheckoutController extends Controller
                 'depositSlip' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
             $imageUrl = $this->productImageUpload($request);
-            $order_details = new OrderDetails();
-            $order_details->customer_id = $request->customer_id;
-            $order_details->order_total = $request->orderTotal;
-            $order_details->shipping_address = $request->shippingAddress;
-            $order_details->country = $request->country;
-            $order_details->state = $request->state;
-            $order_details->zip = $request->zip;
-            $order_details->payment_type = $request->paymentType;
-            $order_details->deposit_slip = $imageUrl;
-            $order_details->save();
+            $bank_payments = new BankPayment();
+            $bank_payments->customer_id = $request->customer_id;
+            $bank_payments->order_total = $request->orderTotal;
+            $bank_payments->shipping_address = $request->shippingAddress;
+            $bank_payments->country = $request->country;
+            $bank_payments->state = $request->state;
+            $bank_payments->zip = $request->zip;
+            $bank_payments->payment_type = $request->paymentType;
+            $bank_payments->deposit_slip = $imageUrl;
+            $bank_payments->save();
             return redirect('/customer/checkout/success_notice');
         } else {
             $cart_final = array(
