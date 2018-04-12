@@ -151,7 +151,7 @@
 
                                 <tr>
                                     <th scope="col">Deposit Slip</th>
-                                    <td><img src="{{ asset($bank_payment->deposit_slip) }}" alt=""/></td>
+                                    <td><img src="{{ asset($bank_payment->deposit_slip) }}" width="500" height="200" alt=""/></td>
                                 </tr>
 
                                 <tr>
