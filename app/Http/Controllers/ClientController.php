@@ -120,7 +120,7 @@ class ClientController extends Controller
         $customer = Customer::find($online_payments->transaction_id);
 //        return $customer;
 //        return $online_payments;
-        return view('admin.clients.download-order-invoice',['online_payments'=>$online_payments,'customer'=>$customer]);
+//        return view('admin.clients.download-order-invoice',['online_payments'=>$online_payments,'customer'=>$customer]);
         $pdf = PDF::loadView('admin.clients.download-order-invoice',['online_payments'=>$online_payments,'customer'=>$customer]);
         return $pdf->download('invoice.pdf');
     }
