@@ -60,6 +60,18 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Verified Token</label>
+
+                            <div class="col-md-6">
+                                <input id="verified_email" type="text" class="form-control" name="verified_email" required>
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{Session::get('message')}}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

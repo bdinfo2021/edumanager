@@ -82,7 +82,7 @@
                                                                 'Higher Education (Colleges)' => 'Higher Education (Colleges)',
                                                                 'University' => 'University',
                                                                 'Other' => 'Other'
-                                                                ], null, ['placeholder' => '-- Select One --','class'=>"form-control"])}}
+                                                                ], null, ['placeholder' => '-- Select One --','class'=>"form-control select-form-control"])}}
                                     </div>
                                     {{--<input id="signup-password" type="password" class="form-control login-password" placeholder="Password">--}}
                                 </div><!--//form-group-->
@@ -159,4 +159,12 @@
             xmlHttp.send(null);
         };
     </script>
+@endsection
+@section('css')
+    <style>
+        .select-form-control{
+            height: 36px !important;
+        }
+    </style>
+
 @endsection

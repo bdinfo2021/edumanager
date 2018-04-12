@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\OrderDetails;
+use App\OnlinePayment;
+use App\BankPayment;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\CustomerCredential;
@@ -21,8 +22,9 @@ class ClientController extends Controller
 //        $customers = Customer::all();
         $customers = DB::table('customers')
             ->leftJoin('customer_credentials','customers.id','=','customer_credentials.customer_id')
-            ->leftJoin('order_details','customers.id','=','order_details.customer_id')
-            ->selectRaw('customers.id, max(first_name) as first_name, max(last_name) as last_name, max(email_address) as email_address, max(mobile_number) as mobile_number, max(customers.created_at) as created_at, count(customer_credentials.id) as customer_credentials_id, count(order_details.id) as order_details_id, max(order_details.id) as last_order_details_id')
+            ->leftJoin('bank_payments','customers.id','=','bank_payments.customer_id')
+            ->leftJoin('online_payments','customers.id','=','online_payments.transaction_id')
+            ->selectRaw('customers.id, max(first_name) as first_name, max(last_name) as last_name, max(email_address) as email_address, max(mobile_number) as mobile_number, max(customers.created_at) as created_at, count(customer_credentials.id) as customer_credentials_id, count(bank_payments.id) as bank_payments_id, count(online_payments.id) as online_payments_id,  max(bank_payments.id) as last_bank_payments_id, max(online_payments.id) as last_online_payments_id')
             ->groupBy('customers.id')
             ->get();
 //        return $customers;
@@ -33,23 +35,18 @@ class ClientController extends Controller
     public function viewClientInfo($id){
         $customer = Customer::find($id);
         $customer_credentials = CustomerCredential::where('customer_id',$customer->id)->get();
-        $order_details = OrderDetails::where('customer_id',$customer->id)->get();
+        $bank_payments = BankPayment::where('customer_id',$customer->id)->get();
+        $online_payments = OnlinePayment::where('transaction_id',$customer->id)->get();
+
 //        return $order_details;
-        return view('admin.clients.view-client',['customer'=>$customer,'customer_credentials'=>$customer_credentials,'order_details'=>$order_details]);
+        return view('admin.clients.view-client',['customer'=>$customer,'customer_credentials'=>$customer_credentials,'bank_payments'=>$bank_payments,'online_payments'=>$online_payments]);
 
     }
 
     public function downloadDepositClip($id){
         $order_details = OrderDetails::find($id);
-//        return $order_details;
         $file_path = public_path($order_details->deposit_slip);
         return Response::download($file_path);
-
-        $customer = Customer::find($id);
-        $customer_credentials = CustomerCredential::where('customer_id',$customer->id)->get();
-//        return $order_details;
-        return view('admin.clients.view-client',['customer'=>$customer,'customer_credentials'=>$customer_credentials,'order_details'=>$order_details]);
-
     }
 
 

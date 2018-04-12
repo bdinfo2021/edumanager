@@ -83,9 +83,10 @@
                                     <th scope="col" class="text-center">Name</th>
                                     <th scope="col" class="text-center">E-mail</th>
                                     <th scope="col" class="text-center">Mobile</th>
-                                    <th scope="col" class="text-center">Date</th>
+                                    <th scope="col" class="text-center">SignUp Date</th>
                                     <th scope="col" class="text-center">Mail Status</th>
-                                    <th scope="col" class="text-center">Checkout Status</th>
+                                    <th scope="col" class="text-center">Bank Payment</th>
+                                    <th scope="col" class="text-center">Online Payment</th>
                                     <th scope="col" class="text-center">Action</th>
                                 </tr>
                                 </thead>
@@ -103,7 +104,8 @@
 {{--                                        <td>{{$customer->customer_credentials_id}}</td>--}}
 {{--                                        <td>{{$customer->order_details_id}}</td>--}}
                                         <td>{!!$customer->customer_credentials_id >= 1 ? '<span class="glyphicon glyphicon-ok"></span>' : '<span class="glyphicon glyphicon-remove"></span>' !!} </td>
-                                        <td>{!!$customer->order_details_id >= 1 ? '<span class="glyphicon glyphicon-ok"></span>' : '<span class="glyphicon glyphicon-remove"></span>' !!} </td>
+                                        <td>{!!$customer->bank_payments_id >= 1 ? '<span class="glyphicon glyphicon-ok"></span>' : '<span class="glyphicon glyphicon-remove"></span>' !!} </td>
+                                        <td>{!!$customer->online_payments_id >= 1 ? '<span class="glyphicon glyphicon-ok"></span>' : '<span class="glyphicon glyphicon-remove"></span>' !!} </td>
                                         <td>
                                             <a href="{{route('/view-client',[$customer->id])}}" class="btn btn-success btn-xs">
                                             <span class="glyphicon glyphicon-user"></span>
@@ -120,8 +122,8 @@
                                             <a href="{{route('/send-mail',[$customer->id])}}" class="btn btn-info btn-xs">
                                             <span class="glyphicon glyphicon-envelope"></span>
                                             </a>
-                                            @if($customer->order_details_id >= 1)
-                                            <a href="{{route('/download-deposit-slip',['id'=>$customer->last_order_details_id])}}" class="btn btn-info btn-xs">
+                                            @if($customer->bank_payments_id >= 1)
+                                            <a href="{{route('/download-deposit-slip',['id'=>$customer->last_bank_payments_id])}}" class="btn btn-info btn-xs">
                                             <span class="glyphicon glyphicon-download-alt"></span>
                                             </a>
                                             @endif

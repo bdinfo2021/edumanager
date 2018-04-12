@@ -14,15 +14,15 @@ class CustomerController extends Controller
     private $packageDetails = [
         1 => [
             'name' => 'CORE',
-            'price' => 150000
+            'price' => 15000
         ],
         2 => [
             'name' => 'ADVANCED',
-            'price' => 300000
+            'price' => 30000
         ],
         3 => [
             'name' => 'ENTERPRISE',
-            'price' => 500000
+            'price' => 50000
         ]
     ];
     public function signUp(){
@@ -39,7 +39,7 @@ class CustomerController extends Controller
             'last_name' => 'required|string|max:50',
             'email_address' => 'required|string|email|max:50|unique:customers',
             'password' => 'required|string|min:6|confirmed',
-            'mobile_number' => 'required|max:20',
+            'mobile_number' => 'required|numeric|max:15',
             'address' => 'required|max:200',
             'name_of_institution' => 'max:254',
             'institution_type' => 'max:254',

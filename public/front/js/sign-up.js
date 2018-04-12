@@ -21,6 +21,7 @@ $(document).ready(function() {
             },
             mobile_number: {
                 required: true,
+                number: true,
                 minlength: 7
             },
             address: "required"
@@ -34,7 +35,8 @@ $(document).ready(function() {
                 email: "Your Email Address is not Valid"
             },
             mobile_number: {
-                required: "Please enter your mobile number",
+                required: "Please enter your Mobile number",
+                number: "Please enter a valid Mobile number.",
                 minlength: "Your mobile number must be at least 7 characters long"
             },
             address: "Please enter your address"

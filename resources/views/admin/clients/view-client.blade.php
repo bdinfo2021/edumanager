@@ -115,50 +115,103 @@
                     </div>
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="text-success text-center">Order Details</h3>
+                            <h3 class="text-success text-center">Bank Payment Details</h3>
                         </div>
                         <div class="panel-body">
-                            @foreach($order_details as $order_detail)
+                            @foreach($bank_payments as $bank_payment)
                             <table class="table table-bordered table-light">
                                 <tr>
                                     <th scope="col">Order Total</th>
-                                    <td>{{$order_detail->order_total}}</td>
+                                    <td>{{$bank_payment->order_total}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="col">Shipping Address</th>
-                                    <td>{{$order_detail->shipping_address}}</td>
+                                    <td>{{$bank_payment->shipping_address}}</td>
                                 </tr>
 
                                 <tr>
                                     <th scope="col">Country</th>
-                                    <td>{{$order_detail->country}}</td>
+                                    <td>{{$bank_payment->country}}</td>
                                 </tr>
 
                                 <tr>
                                     <th scope="col">State</th>
-                                    <td>{{$order_detail->state}}</td>
+                                    <td>{{$bank_payment->state}}</td>
                                 </tr>
 
                                 <tr>
                                     <th scope="col">Zip</th>
-                                    <td>{{$order_detail->zip}}</td>
+                                    <td>{{$bank_payment->zip}}</td>
                                 </tr>
 
                                 <tr>
                                     <th scope="col">Payment Type</th>
-                                    <td>{{$order_detail->payment_type}}</td>
+                                    <td>{{$bank_payment->payment_type}}</td>
                                 </tr>
 
                                 <tr>
                                     <th scope="col">Deposit Slip</th>
-                                    <td><img src="{{ asset($order_detail->deposit_slip) }}" alt=""/></td>
+                                    <td><img src="{{ asset($bank_payment->deposit_slip) }}" alt=""/></td>
                                 </tr>
 
                                 <tr>
                                     <th scope="col">Date</th>
-                                    <td>{{$order_detail->created_at->format('d/m/Y g:ia')}}</td>
+                                    <td>{{$bank_payment->created_at->format('d/m/Y g:ia')}}</td>
                                 </tr>
                             </table>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="text-success text-center">Online Payment Details</h3>
+                        </div>
+                        <div class="panel-body">
+                            @foreach($online_payments as $online_payment)
+                                <table class="table table-bordered table-light">
+                                    <tr>
+                                        <th scope="col">Order Total (TK)</th>
+                                        <td>{{$online_payment->amount}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Shipping Address</th>
+                                        <td>{{$online_payment->bank_transaction_id}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">IP</th>
+                                        <td>{{$online_payment->ip}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Domain</th>
+                                        <td>{{$online_payment->domain}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Bank Trans ID</th>
+                                        <td>{{$online_payment->banktransactionid}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Transaction ID</th>
+                                        <td>{{$online_payment->transactionid}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Bank Name</th>
+                                        <td>{{$online_payment->bank_name}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <td>
+                                            {{--{{date("d/m/Y",$online_payment->created_time)->format('Y-m-d')}}--}}
+                                        @php($date=strtotime($online_payment->created_time))
+                                        {{date("d/m/Y",$date)}}
+                                        </td>
+                                    </tr>
+                                </table>
                             @endforeach
                         </div>
                     </div>

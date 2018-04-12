@@ -122,3 +122,24 @@ Route::post('/customer/shipping/info/save', [
     'uses'  =>  'CheckoutController@saveShippingInfo',
     'as'    =>  '/save-shipping-info'
 ]);
+
+Route::get('/customer/checkout/cancel_url',[
+    'uses'=>'CheckoutController@cancelMessage',
+    'as'=>'/cancel-url'
+]);
+
+Route::get('/customer/checkout/fail_url',[
+    'uses'=>'CheckoutController@failMessage',
+    'as'=>'/fail-url'
+]);
+
+Route::get('/customer/checkout/success_url',[
+    'uses'=>'CheckoutController@onlinePaymentResponse',
+    'as'=>'/success-url'
+]);
+
+
+Route::get('/customer/checkout/success_notice', function () {
+    return view('front.checkout.success-message');
+});
+

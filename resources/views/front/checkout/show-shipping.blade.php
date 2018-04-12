@@ -83,20 +83,38 @@
                                     {{Form::text('last_name',$customer->last_name,array('required' => 'required', 'readonly'=>true, 'placeholder' => 'Customer Last Name', 'class' => 'form-control'))}}
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="username">E-mail</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">@</span>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="username">E-mail</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">@</span>
+                                        </div>
+                                        {{Form::text('emailAddress',$customer->email_address,array('readonly'=>true, 'class' => 'form-control'))}}
                                     </div>
-                                    {{Form::text('emailAddress',$customer->email_address,array('required' => 'required', 'readonly'=>true, 'placeholder' => 'Your Last Name', 'class' => 'form-control'))}}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="username">Mobile</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">+88</span>
+                                        </div>
+                                        {{Form::text('mobileNumber',$customer->mobile_number,array('readonly'=>true, 'class' => 'form-control'))}}
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="mb-3 form-group">
-                                <label for="shipping_address">Shipping Address</label>
+                                <label for="shipping_address">Delivery Address</label>
                                 {{Form::text('shippingAddress','',array('id' => 'shipping_address', 'required' => 'required', 'placeholder' => 'Your Address', 'class' => 'form-control '.$errors->first('shipping_address','is-invalid')))}}
                                 <div class="invalid-feedback">{{$errors->has('shipping_address') ? $errors->first('shipping_address') : ''}}</div>
                             </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="same-address">
+                                <label class="custom-control-label" for="same-address">Delivery address is the same
+                                    as my billing address</label>
+                            </div>
+                            <hr class="mb-4">
                             <div class="row">
                                 <div class="col-md-5 mb-3 form-group">
                                     <label for="country">Country</label>
@@ -115,13 +133,7 @@
                                     {{Form::text('zip','',array('id' => 'zip', 'required' => 'required', 'placeholder' => 'ZIP Code', 'class' => 'form-control'))}}
                                 </div>
                             </div>
-                            <hr class="mb-4">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Shipping address is the same
-                                    as my
-                                    billing address</label>
-                            </div>
+
                             <hr class="mb-4">
 
                             <h4 class="mb-3">Payment</h4>
