@@ -65,6 +65,7 @@ Route::post('/customer/sign-out',[
     'uses'=>'CustomerController@signOutCustomer',
     'as'=>'/customer-sign-out'
 ]);
+//Last Change
 Route::get('/customer-email-check', [
     'uses'  =>'CustomerController@customerEmailCheck',
     'as'    =>'customer-email-check'
