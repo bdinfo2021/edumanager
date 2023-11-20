@@ -116,8 +116,10 @@ class CustomerController extends Controller
         return redirect('/');
     }
 
-    public function customerEmailCheck($email){
-        $customer = Customer::where('email_address',$email)->first();
+    public function customerEmailCheck(Request $request){
+        if(!$request->email)
+            return redirect('/');
+        $customer = Customer::where('email_address',$request->email)->first();
         if($customer){
             echo 'Email is not Available';
         }else{

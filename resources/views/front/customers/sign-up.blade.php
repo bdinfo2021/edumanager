@@ -146,7 +146,7 @@
         emailAddress.onblur = function () {
             var xmlHttp = new XMLHttpRequest();
             var emailAddress = document.getElementById('emailAddress').value;
-            var serverPage = '{{URL::to('/')}}/customer-email-check/'+emailAddress;
+            var serverPage = '{{URL::to('/')}}/customer-email-check?email='+emailAddress;
             xmlHttp.open('GET',serverPage);
             xmlHttp.onreadystatechange = function (){
 //                alert(xmlHttp.status);

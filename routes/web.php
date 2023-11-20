@@ -14,7 +14,9 @@
 //Route::get('/', function () {
 //    return view('front.home.home-content');
 //});
-
+Route::get('/offline', function () {
+    return view('modules/laravelpwa/offline');
+});
 Route::get('/',[
     'uses'=>'CompanyController@index',
     'as'=>'/'
@@ -63,7 +65,7 @@ Route::post('/customer/sign-out',[
     'uses'=>'CustomerController@signOutCustomer',
     'as'=>'/customer-sign-out'
 ]);
-Route::get('/customer-email-check/{email}', [
+Route::get('/customer-email-check', [
     'uses'  =>'CustomerController@customerEmailCheck',
     'as'    =>'customer-email-check'
 ]);
